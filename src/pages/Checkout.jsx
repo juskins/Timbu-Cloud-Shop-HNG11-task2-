@@ -8,7 +8,6 @@ import Payment from '../components/Payment';
 const Checkout = () => {
   const {cartItems,setCartItems,setCartCount} = useContext(stateContext);
   const [payment, setPayment] = useState(false)
-  const active = 'blue'
 
   const balance = cartItems.reduce((total,item)=>Number(item.price)+ total, 0).toFixed(2)
 
@@ -41,15 +40,15 @@ const decreaseQty = (id) =>{
 }
   return (
     <div className='relative'>
-      <div className='px-28 py-8 relative bg-gray-200'>
+      <div className='px-6 py-0 lg:px-28 lg:py-8'>
       <div className='flex flex-col gap-6 py-6'>
         <p className='text-2xl font-medium'>Shopping Cart</p>
-        <div className = 'flex gap-12'>
+        <div className = 'flex lg:flex-row gap-12 flex-col'>
           <div className='flex flex-col gap-3 w-5/6 flex-wrap'>
             {cartItems?.map(item=>(
               <div className='flex gap-4 items-center border-b-1 py-3' key={item.id}>
               <img src={item.image} className='w-44 h-52 object-cover object-center' alt="" />
-              <div className='flex items-center flex-grow justify-between'>
+              <div className='flex items-center flex-grow justify-between flex-col  md:flex-row gap-4'>
                 <div>
                   <p className='font-bold text-sm mb-1'>{item.title}</p>
                   <div>
@@ -64,7 +63,7 @@ const decreaseQty = (id) =>{
                   </div>
                 </div>
 
-                <div className='flex flex-col'>
+                <div className='flex flex-col self-start md:self-auto'>
                   <div className='flex gap-9 items-center'>
                     <div className='flex gap-4 items-center'>
                       <button className='py-2 px-3 text-sm' style={{border:'1px solid #C6BFC9'}} onClick={()=>decreaseQty(item.id)}>-</button>

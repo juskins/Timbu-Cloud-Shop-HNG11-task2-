@@ -19,7 +19,7 @@ const ProductItem = ({product}) => {
       setTimeout(() => {
         setMessage('');
         document.querySelector('.productItem').scrollIntoView();
-      }, 2500);
+      }, 1000);
     }
     else{
       setMessage('Already Added to Cart');
@@ -27,7 +27,7 @@ const ProductItem = ({product}) => {
       setTimeout(() => {
           setMessage('');
           document.querySelector('.productItem').scrollIntoView();
-      }, 2500);
+      }, 1000);
   }
 
 

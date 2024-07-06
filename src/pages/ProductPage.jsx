@@ -14,15 +14,15 @@ import Recommendations from '../components/Recommendations';
 
 const ProductPage = () => {
   return (
-    <div className='px-28 py-8'>
-        <div className="flex gap-2">
+    <div className='lg:px-28 lg:py-8 px-6 py-0 box-border'>
+        <div className="flex lg:flex-nowrap flex-wrap lg:gap-2">
             <img src={hero4} alt="" />
-            <img src={hero2} alt="" />
-            <img src={hero3} alt="" />
+            <img src={hero2} alt="" className='w-1/2 lg:w-auto' />
+            <img src={hero3} alt="" className='w-1/2 lg:w-auto' />
         </div>
 
-        <div className='my-6 flex'>
-            <div className='flex flex-col gap-2 w-1/2'>
+        <div className='my-6 flex flex-col lg:flex-row'>
+            <div className='flex flex-col gap-2 lg:w-1/2 w-full'>
                 <h1 className='text-4xl font-semibold w-400' style={{color:'#9C0001'}}>Bold Red Jacket Sure Fit Stretch Made in China</h1>
                 <div className='flex items-center gap-2 w-400'>
                     <img src={avatar} alt="" className='rounded-full w-9 h-9'/>
@@ -55,7 +55,7 @@ const ProductPage = () => {
                         <p style={{color:'#83758B'}}>N30,000</p>
                         <p>15%</p>
                 </div>
-                <button style={{backgroundColor:'#9C0001',width:'415px'}} className='py-2 px-3 mb-6 text-white'>Buy Now</button>
+                <button style={{backgroundColor:'#9C0001'}} className='py-2 px-3 mb-6 w-full lg:w-96 text-white'>Buy Now</button>
                 <div className='flex items-center gap-3' style={{color:'#83758B'}}>
                     <div className='flex items-center'>
                         <span><CiHeart className='text-red-600'/></span>
@@ -69,7 +69,10 @@ const ProductPage = () => {
 
                 
             </div>
-            <div className='flex flex-col gap-6 w-1/2'>
+
+
+
+            <div className='flex flex-col gap-6 lg:w-1/2 w-full mt-7'>
                 <div className='flex flex-col gap-4'>
                     <p className='text-lg font-semibold' style={{color:'#9C0001'}}>Sure Fit</p>
                     <div className='flex justify-between gap-12 items-center'> 
