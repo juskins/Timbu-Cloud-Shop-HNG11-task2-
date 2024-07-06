@@ -1,14 +1,13 @@
 import React, { useContext, useState } from 'react'
-import hero4 from '../data/hero4.svg';
 import Recommendations from '../components/Recommendations';
 import { stateContext } from '../App';
 import Payment from '../components/Payment';
-import { Link } from 'react-router-dom';
 
 
 
 const Checkout = () => {
-  const {cartItems,setCartItems,setCartCount} = useContext(stateContext)
+  const {cartItems,setCartItems,setCartCount} = useContext(stateContext);
+  const [payment, setPayment] = useState(false)
   const active = 'blue'
 
   const balance = cartItems.reduce((total,item)=>Number(item.price)+ total, 0).toFixed(2)
@@ -41,7 +40,8 @@ const decreaseQty = (id) =>{
   })
 }
   return (
-    <div className='px-28 py-8 relative'>
+    <div className='relative'>
+      <div className='px-28 py-8 relative bg-gray-200'>
       <div className='flex flex-col gap-6 py-6'>
         <p className='text-2xl font-medium'>Shopping Cart</p>
         <div className = 'flex gap-12'>
@@ -105,12 +105,14 @@ const decreaseQty = (id) =>{
                 <h2 className='font-bold'>${cartItems.length === 0 ? 0 : (Number(`${balance}`) + 33000).toFixed(2)} </h2>
               </div>
             </div>
-            <button style={{backgroundColor:'#9C0001',color:'#FFE8F1'}} className='py-2 px-3 w-full'><Link to='/payment'>Buy Now</Link></button>
+            <button style={{backgroundColor:'#9C0001',color:'#FFE8F1'}} className='py-2 px-3 w-full' onClick={()=>setPayment(true)}>Buy Now</button>
           </div>
 
         </div>
       </div>
       <Recommendations/>
+    </div>
+    {payment && <Payment/>}
     </div>
   )
 }

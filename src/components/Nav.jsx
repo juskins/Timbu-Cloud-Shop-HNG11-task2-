@@ -11,7 +11,7 @@ const Nav = () => {
     const {cartItems} = useContext(stateContext)
   return (
     <div className='flex px-32 py-6 gap-24 justify-between items-center'>
-        <Link to='/'><img src={logo} alt=""/></Link>
+        <Link to='/'><img src={logo} alt="" width={'200px'}/></Link>
         <input type="search" style={{border:'1px solid #C6BFC9'}} className='w-full rounded px-4 py-2' placeholder='Search Products'/>
         <div className='flex items-center gap-3 text-xl'>
             <div>

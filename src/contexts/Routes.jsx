@@ -30,10 +30,7 @@ const Routes = createBrowserRouter([
                 path:'confirmation-page',
                 element:<Confirmation/>
             },
-            {
-                path:'payment',
-                element:<Payment/>
-            }
+            
         ]
     },
     

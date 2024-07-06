@@ -4,10 +4,8 @@ import Checkout from '../pages/Checkout'
 const Payment = () => {
 
   return (
-    <div className='relative'>
-        <div className='bg-gray-200'>
-            <Checkout/>
-        </div>
+    <div className=''>
+        
         <div className='fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50'>
             <div className='bg-white py-4 px-8 flex flex-col gap-9 w-5/12'>
                 <h2 className='font-bold text-2xl '>Payment</h2>
