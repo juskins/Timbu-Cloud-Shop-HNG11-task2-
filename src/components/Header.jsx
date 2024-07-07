@@ -6,7 +6,7 @@ import hero from '../assets/hero.svg';
 const Header = () => {
   return (
     <div className='max-w-[1440px] md:mx-auto mx-auto'>
-      <div className=" flex my-3 md:my-0 w-full h-[230px] lg:h-[600px]  bg-cover md:bg-right-top bg-no-repeat bg-mobile md:bg-desktop bg-center" >
+      <div className=" header-background flex my-3 md:my-0 w-full h-[230px] lg:h-[600px]  md:bg-right-top bg-center" >
        <div className='m-auto mx-32 md:flex flex-col gap-3 hidden'>
         <p className='text-4xl font-bold w-72' style={{color:'#9C0001'}}>Stand Out in Bold Red Jacket</p>
         <p className='text-lg mb-4'>Elevate Your Style with Our Bold Red Jacket</p>
