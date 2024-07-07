@@ -2,8 +2,8 @@ import React, { useContext } from 'react'
 import { AiOutlineShoppingCart } from 'react-icons/ai'
 import { CiHeart } from 'react-icons/ci'
 import { TiMessages } from 'react-icons/ti'
-import avatar from '../data/avatar.svg';
-import logo from '../data/logo.svg';
+import avatar from '../assets/avatar.svg';
+import logo from '../assets/logo.svg';
 import { stateContext } from '../App'
 import { Link } from 'react-router-dom'
 import { MdOutlineArrowRightAlt } from 'react-icons/md';

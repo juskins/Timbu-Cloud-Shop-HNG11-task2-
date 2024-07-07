@@ -1,8 +1,8 @@
 import React from 'react'
-import hero2 from '../data/hero2.svg';
-import hero3 from '../data/hero3.svg';
-import avatar from '../data/avatar.svg';
-import hero4 from '../data/hero4.svg';
+import hero2 from '../assets/hero2.svg';
+import hero3 from '../assets/hero3.svg';
+import avatar from '../assets/avatar.svg';
+import hero4 from '../assets/hero4.svg';
 import { AiOutlineShoppingCart } from 'react-icons/ai';
 import { CiHeart } from 'react-icons/ci';
 import { BiCommentDots } from 'react-icons/bi';

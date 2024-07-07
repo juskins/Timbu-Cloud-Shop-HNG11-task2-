@@ -1,5 +1,5 @@
 import React from 'react'
-import hero from '../data/hero.svg';
+import hero from '../assets/hero.svg';
 // import mobilehero from '../data/mobilehero.svg';
 
 
