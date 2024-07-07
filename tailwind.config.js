@@ -21,8 +21,8 @@ export default {
         'half-transparent': 'rgba(0, 0, 0, 0.5)',
       },
       backgroundImage:{
+        'desktop': "url('src/data/mobile hero.svg')",
         'mobile': "url('src/data/hero4.svg')",
-        'desktop': "url(C:\Users\User PC\Desktop\HNG11\Mini Online Store\src\data\hero4.svg')",
         
       },
       borderWidth: {
