@@ -16,14 +16,14 @@ const ProductPage = () => {
   return (
     <div className='lg:px-28 lg:py-8 px-6 py-0 box-border max-w-[1440px] md:mx-auto'>
         <div className="flex lg:flex-nowrap flex-wrap lg:gap-2">
-            <img src={hero4} alt="" className='w-full'/>
-            <img src={hero2} alt="" className='w-1/2 lg:w-auto lg:h-full flex-grow' />
-            <img src={hero3} alt="" className='w-1/2 lg:w-auto lg:h-full' />
+            <img src={hero4} alt="" className='w-full h-[327px] lg:h-full object-cover bg-red-600'/>
+            <img src={hero2} alt="" className='w-1/2 lg:w-auto lg:h-full object-top object-cover h-[200px]' />
+            <img src={hero3} alt="" className='w-1/2 lg:w-auto lg:h-full object-cover h-[200px]' />
         </div>
 
         <div className='my-6 flex flex-col gap-[28px] lg:flex-row text-[#190028]'>
             <div className='flex flex-col gap-2 lg:w-1/2 w-full'>
-                <h1 className='text-4xl font-semibold w-400' style={{color:'#9C0001'}}>Bold Red Jacket Sure Fit Stretch Made in China</h1>
+                <h1 className='lg:text-4xl lg:w-400 w-[208px]  text-[18px] font-normal lg:font-semibold ' style={{color:'#9C0001'}}>Bold Red Jacket Sure Fit Stretch Made in China</h1>
                 <div className='flex items-center gap-2 w-400'>
                     <img src={avatar} alt="" className='rounded-full w-9 h-9'/>
                     <div className="flex flex-col">
