@@ -1,11 +1,12 @@
 import React from 'react'
 import hero from '../data/hero.svg';
+// import mobilehero from '../data/mobilehero.svg';
 
 
 const Header = () => {
   return (
-    <div>
-      <div className=" flex mx-6 my-3 md:mx-0 md:my-0 w-full h-459 bg-cover bg-right md:bg-center" style={{backgroundImage:`url(${hero})`}}>
+    <div className='max-w-[1440px] md:mx-auto'>
+      <div className=" flex mx-auto my-3  md:my-0 w-full h-459  bg-cover md:bg-center " style={{backgroundImage:`url(${hero})`}}>
        <div className='m-auto mx-32 md:flex flex-col gap-3 hidden'>
         <p className='text-4xl font-bold w-72' style={{color:'#9C0001'}}>Stand Out in Bold Red Jacket</p>
         <p className='text-lg mb-4'>Elevate Your Style with Our Bold Red Jacket</p>

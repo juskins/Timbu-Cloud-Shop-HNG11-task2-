@@ -39,7 +39,7 @@ const decreaseQty = (id) =>{
   })
 }
   return (
-    <div className='relative'>
+    <div className='relative max-w-[1440px] md:mx-auto text-[#190028]'>
       <div className='px-6 py-0 lg:px-28 lg:py-8'>
       <div className='flex flex-col gap-6 py-6'>
         <p className='text-2xl font-medium'>Shopping Cart</p>

@@ -7,10 +7,10 @@ import Footer from './Footer'
 const Home = () => {
 
   return (
-    <>
+    <div className=''>
     <Header/>
     <ProductList/>
-    </>
+    </div>
   )
 }
 

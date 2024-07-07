@@ -14,14 +14,14 @@ import Recommendations from '../components/Recommendations';
 
 const ProductPage = () => {
   return (
-    <div className='lg:px-28 lg:py-8 px-6 py-0 box-border'>
+    <div className='lg:px-28 lg:py-8 px-6 py-0 box-border max-w-[1440px] md:mx-auto'>
         <div className="flex lg:flex-nowrap flex-wrap lg:gap-2">
-            <img src={hero4} alt="" />
-            <img src={hero2} alt="" className='w-1/2 lg:w-auto' />
-            <img src={hero3} alt="" className='w-1/2 lg:w-auto' />
+            <img src={hero4} alt="" className='w-full'/>
+            <img src={hero2} alt="" className='w-1/2 lg:w-auto lg:h-full flex-grow' />
+            <img src={hero3} alt="" className='w-1/2 lg:w-auto lg:h-full' />
         </div>
 
-        <div className='my-6 flex flex-col lg:flex-row'>
+        <div className='my-6 flex flex-col gap-[28px] lg:flex-row text-[#190028]'>
             <div className='flex flex-col gap-2 lg:w-1/2 w-full'>
                 <h1 className='text-4xl font-semibold w-400' style={{color:'#9C0001'}}>Bold Red Jacket Sure Fit Stretch Made in China</h1>
                 <div className='flex items-center gap-2 w-400'>
@@ -49,13 +49,13 @@ const ProductPage = () => {
                         <div className='bg-gray-100 p-1'>By Now with Tags</div>
                     </div>
                 </div>
-                <hr className='border-1 my-6' style={{border:'1px solid #C6BFC9'}}/>
+                <hr className='my-6' style={{border:'1px solid #C6BFC9'}}/>
                 <div className="flex gap-2 mb-6">
                         <p className='font-bold'>N27,000</p>
                         <p style={{color:'#83758B'}}>N30,000</p>
                         <p>15%</p>
                 </div>
-                <button style={{backgroundColor:'#9C0001'}} className='py-2 px-3 mb-6 w-full lg:w-96 text-white'>Buy Now</button>
+                <button style={{backgroundColor:'#9C0001'}} className='py-2 px-3 mb-6 w-full lg:w-96 text-[#FFE8F1]'>Buy Now</button>
                 <div className='flex items-center gap-3' style={{color:'#83758B'}}>
                     <div className='flex items-center'>
                         <span><CiHeart className='text-red-600'/></span>
@@ -97,14 +97,14 @@ const ProductPage = () => {
                         
                     </div>
                 </div>
-                <p>Transform your look with our bold red jacket, designed to capture attention and exude confidence. 
+                <p className='text-[#190028]'>Transform your look with our bold red jacket, designed to capture attention and exude confidence. 
                     This chic and versatile piece combines modern elegance with unmatched comfort, 
                     making it the perfect addition to any wardrobe. Whether you're dressing up for 
                     a night out or adding a pop of color to your everyday style, our red jacket ensures you stand out with 
                     sophistication and ease. Don't miss out on this must-have fashion statement.</p>
                 <hr className='' style={{border:'1px solid #C6BFC9'}}/>
 
-                <div>
+                <div className='text-[#190028]'>
                     <p>Transform your look with our bold red jacket, designed to capture attention and exude 
                         confidence. This chic and versatile piece combines modern elegance with unmatched 
                         comfort, making it the perfect addition to any wardrobe. Whether you're dressing up 

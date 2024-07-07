@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 
 const Footer = () => {
   return (
-    <div className='py-8 px-4 lg:px-32 md:py-12'>
+    <div className='py-8 px-4 lg:px-32 md:py-12 mx-auto max-w-[1440px] text-[#190028]'>
         <div className='lg:flex hidden justify-center lg:order-none order-2 items-center gap-14 '>
             <div className=''>
                 <p className='font-bold text-2xl'>Fear of Missing Out?</p>
@@ -12,10 +12,10 @@ const Footer = () => {
             </div>
             <div className='flex items-center gap-2 w-2/5'>
                 <input type="text" className='p-3 w-full' placeholder='Your Email Address' style={{border:'1px solid #C6BFC9'}}/>
-                <button style={{backgroundColor:'#9C0001'}} className='text-white p-3 w-52'><Link to='/products/8'>Subscribe Now</Link></button>
+                <button style={{backgroundColor:'#9C0001'}} className='text-[#FFE8F1] p-3 w-52'><Link to='/products/8'>Subscribe Now</Link></button>
             </div>
         </div>
-        <div className='border-1 my-8 w-3/5 text-center mx-auto '></div>
+        <div className='border-1 border-[#C6BFC9] my-8 w-[90%]'></div>
 
         <footer className='flex flex-col gap-10'>
             <div className='self-end hidden flex-col gap-3 w-96 lg:flex'>
