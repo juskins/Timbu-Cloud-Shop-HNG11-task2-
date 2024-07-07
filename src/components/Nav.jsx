@@ -18,23 +18,23 @@ const Nav = () => {
             <input type="text" className='w-full py-2 px-3 ' style={{border:'1px solid #E1DEE3'}}/>
             <button className='absolute py-2 px-4 w-[26.08px] flex flex-col justify-center items-center right-0 text-[#EDEBEE] top-1/2 -translate-y-1/2  mr-[10px]' style={{backgroundColor:"#9C0001"}}><MdOutlineArrowRightAlt/></button>
         </div>
-        <div className='flex items-center gap-4 text-2xl text-[#190028]'>
+        <div className='flex items-center gap-2 text-2xl text-[#190028]'>
             <div>
-                <button className=' h-[18px] w-[18px]'><TiMessages/></button>
+                <button className=''><TiMessages/></button>
             </div>
             <div>
-                <button className=' h-[18px] w-[18px]'><CiHeart/></button>
+                <button className=''><CiHeart/></button>
             </div>
             <div className='relative'>
                 <Link to='checkout'>
-                <button className=' h-[18px] w-[18px]'>
+                <button className=''>
                     <div><AiOutlineShoppingCart/></div>
-                    <small className='absolute text-white rounded-full h-4 w-4 -top-1 -right-4 text-xs' style={{backgroundColor:`${cartItems.length === 0 ? 'white' : 'red'}`}}>{cartItems.length}</small>
+                    <small className='absolute text-white rounded-full h-4 w-4 -top-2 -right-3 text-xs' style={{backgroundColor:`${cartItems.length === 0 ? 'white' : 'red'}`}}>{cartItems.length}</small>
                 </button>
                 </Link>
             </div>
-            <div className='w-9 h-9 '>
-                <img src={avatar} alt="" className='rounded-full h-9 w-9'/>
+            <div className='w-9 h-9'>
+                <img src={avatar} alt="" className='rounded-full'/>
             </div>
         </div>
     </div>

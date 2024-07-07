@@ -24,7 +24,7 @@ const ProductPage = () => {
         <div className='my-6 flex flex-col gap-[28px] lg:flex-row text-[#190028]'>
             <div className='flex flex-col gap-2 lg:w-1/2 w-full'>
                 <h1 className='lg:text-4xl lg:w-400 w-[208px]  text-[18px] font-normal lg:font-semibold ' style={{color:'#9C0001'}}>Bold Red Jacket Sure Fit Stretch Made in China</h1>
-                <div className='flex items-center gap-2 w-400'>
+                <div className='lg:flex items-center hidden gap-2 w-400'>
                     <img src={avatar} alt="" className='rounded-full w-9 h-9'/>
                     <div className="flex flex-col">
                         <p className='font-bold'>raphogah</p>
