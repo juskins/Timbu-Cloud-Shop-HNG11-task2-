@@ -22,7 +22,7 @@ export default {
       },
       backgroundImage:{
         'mobile': "url('src/data/hero4.svg')",
-        'desktop': "url('src/data/hero.svg')",
+        'desktop': "url(C:\Users\User PC\Desktop\HNG11\Mini Online Store\src\data\hero4.svg')",
         
       },
       borderWidth: {
