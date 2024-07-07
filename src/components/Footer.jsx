@@ -23,10 +23,10 @@ const Footer = () => {
                 <p className='border-b-2 pb-3 border-gray-400'>Your email here</p>
             </div>
 
-            <div className='flex lg:flex-row flex-col justify-between items-center'>
-                <div className='lg:order-none order-2 md:my-14 my-4 '>
+            <div className='flex lg:flex-row flex-col justify-between lg:items-start items-center'>
+                <div className='lg:order-none order-2 my-4 lg:my-0'>
                     <p className='font-bold block md:hidden text-center'>Get to us</p>
-                    <p className='w-72 text-center lg:text-left lg:self-start'>Visit us at Shop F19/23, Road 3, Ikota Shopping Complex, VGC, Lekki-Epe Expressway, Lagos, Nigeria +234 (0) 9064945445</p>
+                    <p className='w-[280px] text-center lg:text-left'>Visit us at Shop F19/23, Road 3, Ikota Shopping Complex, VGC, Lekki-Epe Expressway, Lagos, Nigeria +234 (0) 9064945445</p>
                 </div>
                 <div className='flex md:flex-row flex-col justify-center items-center md:gap-14 gap-4'>
                     <div className='md:self-start text-center lg:text-left'>
