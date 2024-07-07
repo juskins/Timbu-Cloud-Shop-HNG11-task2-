@@ -26,10 +26,10 @@ const Footer = () => {
             <div className='flex lg:flex-row flex-col justify-between items-center'>
                 <div className='lg:order-none order-2 md:my-14 my-4 '>
                     <p className='font-bold block md:hidden text-center'>Get to us</p>
-                    <p className='w-72 text-center lg:self-start'>Visit us at Shop F19/23, Road 3, Ikota Shopping Complex, VGC, Lekki-Epe Expressway, Lagos, Nigeria +234 (0) 9064945445</p>
+                    <p className='w-72 text-center lg:text-left lg:self-start'>Visit us at Shop F19/23, Road 3, Ikota Shopping Complex, VGC, Lekki-Epe Expressway, Lagos, Nigeria +234 (0) 9064945445</p>
                 </div>
                 <div className='flex md:flex-row flex-col justify-center items-center md:gap-14 gap-4'>
-                    <div className='md:self-start text-center'>
+                    <div className='md:self-start text-center lg:text-left'>
                         <ul>
                             <li className='font-bold'>Shop</li>
                             <li>Real Estate</li>
@@ -40,7 +40,7 @@ const Footer = () => {
                         </ul>
                     </div>
 
-                    <div className='md:self-start text-center'>
+                    <div className='md:self-start text-center lg:text-left'>
                         <ul>
                             <li className='font-bold'>Popular Brands</li>
                             <li>Ikea</li>
@@ -52,7 +52,7 @@ const Footer = () => {
                         </ul>
                     </div>
 
-                    <div className='md:self-start text-center'>
+                    <div className='md:self-start text-center lg:text-left'>
                         <ul>
                             <li className='font-bold'>Company</li>
                             <li>About</li>
@@ -62,7 +62,7 @@ const Footer = () => {
                         </ul>
                     </div>
 
-                    <div className='md:self-start text-center'>
+                    <div className='md:self-start text-center lg:text-left'>
                         <ul>
                             <li className='font-bold'>Social</li>
                             <li>Instagram</li>
