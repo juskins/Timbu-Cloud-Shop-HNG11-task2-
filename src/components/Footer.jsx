@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 
 const Footer = () => {
   return (
-    <div className='py-8 px-4 lg:px-32 md:py-12 mx-auto max-w-[1440px] text-[#190028]'>
+    <div className='py-8 px-4 lg:px-32 md:py-12 mx-auto max-w-[1440px] text-[#190028] bg-[#FAFAFB] md:bg-white'>
         <div className='lg:flex hidden justify-center lg:order-none order-2 items-center gap-14 '>
             <div className=''>
                 <p className='font-bold text-2xl'>Fear of Missing Out?</p>
@@ -15,7 +15,7 @@ const Footer = () => {
                 <button style={{backgroundColor:'#9C0001'}} className='text-[#FFE8F1] p-3 w-52'><Link to='/products/8'>Subscribe Now</Link></button>
             </div>
         </div>
-        <div className='border-1 border-[#C6BFC9] my-8 w-[90%]'></div>
+        <div className='border-1 border-[#C6BFC9] my-8 w-[90%] hidden md:block'></div>
 
         <footer className='flex flex-col gap-10'>
             <div className='self-end hidden flex-col gap-3 w-96 lg:flex'>
@@ -24,14 +24,14 @@ const Footer = () => {
             </div>
 
             <div className='flex lg:flex-row flex-col justify-between items-center'>
-                <div className='lg:order-none order-2 my-14 '>
+                <div className='lg:order-none order-2 md:my-14 my-4 '>
                     <p className='font-bold block md:hidden text-center'>Get to us</p>
                     <p className='w-72 text-center lg:self-start'>Visit us at Shop F19/23, Road 3, Ikota Shopping Complex, VGC, Lekki-Epe Expressway, Lagos, Nigeria +234 (0) 9064945445</p>
                 </div>
-                <div className='flex md:flex-row flex-col justify-center items-center gap-14'>
+                <div className='flex md:flex-row flex-col justify-center items-center md:gap-14 gap-4'>
                     <div className='md:self-start text-center'>
                         <ul>
-                            <li className='font-semibold'>Shop</li>
+                            <li className='font-bold'>Shop</li>
                             <li>Real Estate</li>
                             <li>Furniture</li>
                             <li>Deco</li>
@@ -42,7 +42,7 @@ const Footer = () => {
 
                     <div className='md:self-start text-center'>
                         <ul>
-                            <li className='font-semibold'>Popular Brands</li>
+                            <li className='font-bold'>Popular Brands</li>
                             <li>Ikea</li>
                             <li>Ashley Furniture</li>
                             <li>Crate & Bard</li>
@@ -54,7 +54,7 @@ const Footer = () => {
 
                     <div className='md:self-start text-center'>
                         <ul>
-                            <li className='font-semibold'>Company</li>
+                            <li className='font-bold'>Company</li>
                             <li>About</li>
                             <li>Our Community</li>
                             <li>Blog</li>
@@ -64,7 +64,7 @@ const Footer = () => {
 
                     <div className='md:self-start text-center'>
                         <ul>
-                            <li className='font-semibold'>Social</li>
+                            <li className='font-bold'>Social</li>
                             <li>Instagram</li>
                             <li>Facebook</li>
                             <li>Twitter</li>
@@ -73,11 +73,11 @@ const Footer = () => {
                    
                 </div>
                 <div className='text-center lg:hidden order-3 flex flex-col gap-2'>
-                        <p className='font-semibold'>Connect With us</p>
+                        <p className='font-bold'>Connect With us</p>
                         <p>Fear of Missing Out? Get the latest deals, updates and more</p>
                         <div className='relative'>
                             <input type="text" className='w-full py-2 px-3 ' style={{border:'1px solid #E1DEE3'}}/>
-                            <button className='absolute py-2 px-4 right-0 text-white text-2xl' style={{backgroundColor:"#9C0001"}}><MdOutlineArrowRightAlt/></button>
+                            <button className='absolute py-2 px-4 text-center right-0 text-[#C6BFC9] top-1/2 -translate-y-1/2  mr-[10px]' style={{backgroundColor:"#9C0001"}}><MdOutlineArrowRightAlt/></button>
                         </div>
                 </div>
             </div>

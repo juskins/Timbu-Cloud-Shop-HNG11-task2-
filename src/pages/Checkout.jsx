@@ -44,7 +44,7 @@ const decreaseQty = (id) =>{
       <div className='flex flex-col gap-6 py-6'>
         <p className='text-2xl font-medium'>Shopping Cart</p>
         <div className = 'flex lg:flex-row gap-12 flex-col'>
-          <div className='flex flex-col gap-3 w-5/6 flex-wrap'>
+          <div className='flex flex-col gap-3  flex-wrap w-full'>
             {cartItems?.map(item=>(
               <div className='flex gap-4 items-center border-b-1 py-3' key={item.id}>
               <img src={item.image} className='w-44 h-52 object-cover object-center' alt="" />
@@ -63,16 +63,19 @@ const decreaseQty = (id) =>{
                   </div>
                 </div>
 
-                <div className='flex flex-col self-start md:self-auto'>
-                  <div className='flex gap-9 items-center'>
+                <div className='flex flex-col self-start w-full  md:self-auto '>
+                  <div className='flex justify-between items-center gap-9'>
                     <div className='flex gap-4 items-center'>
                       <button className='py-2 px-3 text-sm' style={{border:'1px solid #C6BFC9'}} onClick={()=>decreaseQty(item.id)}>-</button>
                       <span>{item.qty}</span>
                       <button className='py-2 px-3 text-sm' style={{border:'1px solid #C6BFC9'}} onClick={()=>increaseQty(item.id)}>+</button>
                     </div>
-                    <p className='font-bold '>N{item.price}</p>
+                    <div>
+                      <p className='font-bold '>N{item.price}</p>
+                      <button className='self-end text-sm cursor-pointer' onClick={()=>removeFromCart(item.id)}>Remove</button>
+                    </div>
                   </div>
-                  <button className='self-end text-sm cursor-pointer' onClick={()=>removeFromCart(item.id)}>Remove</button>
+                  
                 </div>
               </div>
             </div>
@@ -87,7 +90,7 @@ const decreaseQty = (id) =>{
               <p className='font-medium'>Order details</p>
               <div className='flex flex-col gap-1'>
                 <div className='flex justify-between'>
-                  <p>Subtotal ({cartItems.length})</p>
+                  <p>Subtotal ({cartItems.length}) items</p>
                   <p>{balance}</p>
                 </div>
                 <div className='flex justify-between'>
@@ -95,7 +98,7 @@ const decreaseQty = (id) =>{
                   <p>N33,000</p>
                 </div>
               </div>
-              <div className='flex items-center'>
+              <div className='flex items-center border-b-1 pb-4'>
                 <input type="text" placeholder='Discount code or gift card' className=' py-2 px-3 mr-3' style={{border:'1px solid #A69F9F'}}/>
                 <button style={{backgroundColor:'#9C0001',color:'#FFE8F1'}} className='py-2 px-3'>Apply</button>
               </div>
