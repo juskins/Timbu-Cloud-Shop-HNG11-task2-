@@ -6,13 +6,18 @@ import avatar from '../data/avatar.svg';
 import logo from '../data/logo.svg';
 import { stateContext } from '../App'
 import { Link } from 'react-router-dom'
+import { MdOutlineArrowRightAlt } from 'react-icons/md';
 
 const Nav = () => {
     const {cartItems} = useContext(stateContext)
   return (
-    <div className='flex mx-auto max-w-[1440px] px-6 py-0 md:px-32 md:py-6 gap-2 md:gap-24 justify-between items-center flex-wrap md:flex-nowrap'>
-        <Link to='/'><img src={logo} alt="" className='w-32 md:w-52'/></Link>
-        <input type="search" style={{border:'1px solid #C6BFC9'}} className='w-full rounded px-4 py-2 order-3 md:order-none' placeholder='Search Products'/>
+    <div className='flex mx-auto max-w-[1440px] px-6 py-0 lg:px-32 lg:py-6 gap-2 lg:gap-24 justify-between items-center flex-wrap lg:flex-nowrap'>
+        <Link to='/'><img src={logo} alt="" className='w-32 lg:w-52'/></Link>
+        <input type="search" style={{border:'1px solid #C6BFC9'}} className='w-full mb-2 hidden lg:mb-0 px-4 py-2 order-3 lg:order-none' placeholder='Search all Products'/>
+        <div className='relative w-full mb-2 order-3 lg:hidden'>
+            <input type="text" className='w-full py-2 px-3 ' style={{border:'1px solid #E1DEE3'}}/>
+            <button className='absolute py-2 px-4 w-[26.08px] flex flex-col justify-center items-center right-0 text-[#EDEBEE] top-1/2 -translate-y-1/2  mr-[10px]' style={{backgroundColor:"#9C0001"}}><MdOutlineArrowRightAlt/></button>
+        </div>
         <div className='flex items-center gap-3 text-xl'>
             <div>
                 <button><TiMessages/></button>

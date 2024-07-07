@@ -77,7 +77,7 @@ const Footer = () => {
                         <p>Fear of Missing Out? Get the latest deals, updates and more</p>
                         <div className='relative'>
                             <input type="text" className='w-full py-2 px-3 ' style={{border:'1px solid #E1DEE3'}}/>
-                            <button className='absolute py-2 px-4 text-center right-0 text-[#C6BFC9] top-1/2 -translate-y-1/2  mr-[10px]' style={{backgroundColor:"#9C0001"}}><MdOutlineArrowRightAlt/></button>
+                            <button className='absolute py-2 px-4 w-[26.08px] flex flex-col justify-center items-center right-0 text-[#EDEBEE] top-1/2 -translate-y-1/2  mr-[10px]' style={{backgroundColor:"#9C0001"}}><MdOutlineArrowRightAlt/></button>
                         </div>
                 </div>
             </div>
