@@ -75,7 +75,7 @@ const ProductPage = () => {
             <div className='flex flex-col gap-6 lg:w-1/2 w-full mt-7'>
                 <div className='flex flex-col gap-4'>
                     <p className='text-lg font-semibold' style={{color:'#9C0001'}}>Sure Fit</p>
-                    <div className='flex justify-between gap-12 items-center'> 
+                    <div className='flex justify-between items-center'> 
                         <div className='flex gap-2'>
                             <div className='flex items-center gap-2 py-1 px-2 border'>
                                 <span><CiHeart className='text-red-600'/></span>
