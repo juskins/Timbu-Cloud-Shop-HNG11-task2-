@@ -1,13 +1,9 @@
 import React, { useContext } from 'react'
-import { AiOutlineShoppingCart } from 'react-icons/ai'
-import { CiHeart } from 'react-icons/ci'
-import { TiMessages } from 'react-icons/ti'
 import avatar from '../assets/avatar.svg';
 import logo from '../assets/logo.svg';
 import { stateContext } from '../App'
 import { Link } from 'react-router-dom'
 import { MdOutlineArrowRightAlt } from 'react-icons/md';
-import { HeartIcon } from '@heroicons/react/24/outline';
 import { FaRegHeart } from 'react-icons/fa6';
 import { PiChatsBold, PiShoppingCartBold } from 'react-icons/pi';
 
