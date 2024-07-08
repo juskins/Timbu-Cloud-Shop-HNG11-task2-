@@ -7,6 +7,9 @@ import logo from '../assets/logo.svg';
 import { stateContext } from '../App'
 import { Link } from 'react-router-dom'
 import { MdOutlineArrowRightAlt } from 'react-icons/md';
+import { HeartIcon } from '@heroicons/react/24/outline';
+import { FaRegHeart } from 'react-icons/fa6';
+import { PiChatsBold, PiShoppingCartBold } from 'react-icons/pi';
 
 const Nav = () => {
     const {cartItems} = useContext(stateContext)
@@ -18,17 +21,18 @@ const Nav = () => {
             <input type="text" className='w-full py-2 px-3 ' style={{border:'1px solid #E1DEE3'}}/>
             <button className='absolute py-2 px-4 w-[26.08px] flex flex-col justify-center items-center right-0 text-[#EDEBEE] top-1/2 -translate-y-1/2  mr-[10px]' style={{backgroundColor:"#9C0001"}}><MdOutlineArrowRightAlt/></button>
         </div>
-        <div className='flex items-center gap-2 text-2xl text-[#190028]'>
+        <div className='flex items-center gap-3 text-2xl text-[#190028]'>
             <div>
-                <button className=''><TiMessages/></button>
+                <button className=''><PiChatsBold /></button>
             </div>
             <div>
-                <button className=''><CiHeart/></button>
+                <button className=''><FaRegHeart/></button>
+                
             </div>
             <div className='relative'>
                 <Link to='checkout'>
                 <button className=''>
-                    <div><AiOutlineShoppingCart/></div>
+                    <div><PiShoppingCartBold/></div>
                     <small className='absolute text-white rounded-full h-4 w-4 -top-2 -right-3 text-xs' style={{backgroundColor:`${cartItems.length === 0 ? 'white' : 'red'}`}}>{cartItems.length}</small>
                 </button>
                 </Link>
