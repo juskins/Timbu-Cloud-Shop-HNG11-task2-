@@ -1,12 +1,12 @@
 import React, { useContext } from 'react'
 import { stateContext } from '../App'
-import { useNavigate } from 'react-router-dom'
+import { Link, useNavigate, useParams } from 'react-router-dom'
 import stars from '../assets/stars.svg';
 
 
 const ProductItem = ({product}) => {
   const {cartItems, setCartItems,addToCart,setMessage} = useContext(stateContext)
-  const navigate = useNavigate()
+  const {productID} = useParams()
   const addProductToCart = ()=>{
     const newProduct = {
       ...product,qty:1
@@ -37,7 +37,7 @@ const ProductItem = ({product}) => {
   }
   return (
     <div className="productItem border p-4 md:gap-2 gap-[2px] flex flex-col justify-center  flex-grow box-border overflow-hidden">
-        <img className=' h-[180px] w-[166px] md:h-[270px] md:w-[247px]' src={product.image} alt="" />
+        <Link to={`/products/${product.id}`}><img className=' h-[180px] w-[166px] md:h-[270px] md:w-[247px]' src={product.image} alt=""/></Link>
         <div className='flex flex-col gap-2 text-[#190028]'>
           <div className="font-bold text-[14px] w-60 leading-[16.8px] text-[#190028] text-left">{product.title}</div>
           <p className='text-[12px]'>From Lagos</p>

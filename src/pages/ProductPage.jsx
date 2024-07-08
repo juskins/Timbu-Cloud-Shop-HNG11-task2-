@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import hero2 from '../assets/hero2.svg';
 import hero3 from '../assets/hero3.svg';
 import avatar from '../assets/avatar.svg';
@@ -9,21 +9,26 @@ import { BiCommentDots } from 'react-icons/bi';
 import { IoShareSocialOutline } from 'react-icons/io5';
 import { HiOutlineFlag } from 'react-icons/hi2';
 import Recommendations from '../components/Recommendations';
+import { useParams } from 'react-router-dom';
+import { stateContext } from '../App';
 
 
 
 const ProductPage = () => {
+  const {products} = useContext(stateContext)
+  const {productID} = useParams()
+  console.log(productID)
   return (
     <div className='lg:px-28 lg:py-8 px-6 py-0 box-border max-w-[1440px] md:mx-auto'>
-        <div className="flex lg:flex-nowrap flex-wrap lg:gap-2">
-            <img src={hero4} alt="" className='w-full h-[327px] lg:h-full object-cover bg-red-600'/>
-            <img src={hero2} alt="" className='w-1/2 lg:w-auto lg:h-full object-top object-cover h-[200px]' />
-            <img src={hero3} alt="" className='w-1/2 lg:w-auto lg:h-full object-cover h-[200px]' />
+        <div className="flex lg:flex-nowrap flex-wrap lg:gap-2 lg:h-[372px] w-full">
+            <img src={products[productID].image} alt="" className='w-[90%] h-[327px] lg:h-full object-top object-cover'/>
+            <img src={products[productID].image} alt="" className='w-[166px] lg:h-full object-fill h-[200px]' />
+            <img src={products[productID].image} alt="" className='lg:w-[166px] lg:h-full   object-fill h-[200px]' />
         </div>
 
         <div className='my-6 flex flex-col gap-[28px] lg:flex-row text-[#190028]'>
             <div className='flex flex-col gap-2 lg:w-1/2 w-full'>
-                <h1 className='lg:text-4xl lg:w-400 w-[208px]  text-[18px] font-normal lg:font-semibold ' style={{color:'#9C0001'}}>Bold Red Jacket Sure Fit Stretch Made in China</h1>
+                <h1 className='lg:text-4xl lg:w-400 w-[208px]  text-[18px] font-normal lg:font-semibold ' style={{color:'#9C0001'}}>{products[productID].title}</h1>
                 <div className='lg:flex items-center hidden gap-2 w-400'>
                     <img src={avatar} alt="" className='rounded-full w-9 h-9'/>
                     <div className="flex flex-col">
@@ -51,7 +56,7 @@ const ProductPage = () => {
                 </div>
                 <hr className='my-6' style={{border:'1px solid #C6BFC9'}}/>
                 <div className="flex gap-2 mb-6">
-                        <p className='font-bold'>N27,000</p>
+                        <p className='font-bold'>N{products[productID].price}</p>
                         <p style={{color:'#83758B'}}>N30,000</p>
                         <p>15%</p>
                 </div>

@@ -7,7 +7,7 @@ import Payment from '../components/Payment';
 
 const Checkout = () => {
   const {cartItems,setCartItems,setCartCount} = useContext(stateContext);
-  const [payment, setPayment] = useState(false)
+  const {isOverlayVisible,setOverlayVisible} =useContext(stateContext)
 
   const balance = cartItems.reduce((total,item)=>Number(item.price)+ total, 0).toFixed(2)
 
@@ -38,6 +38,10 @@ const decreaseQty = (id) =>{
       }
   })
 }
+
+
+
+
   return (
     <div className='relative max-w-[1440px] md:mx-auto text-[#190028]'>
       <div className='px-6 py-0 lg:px-28 lg:py-8'>
@@ -91,7 +95,7 @@ const decreaseQty = (id) =>{
               <div className='flex flex-col gap-1'>
                 <div className='flex justify-between'>
                   <p>Subtotal ({cartItems.length}) items</p>
-                  <p>{balance}</p>
+                  <p>N{balance}</p>
                 </div>
                 <div className='flex justify-between'>
                   <p>Shipping and handling fees</p>
@@ -104,17 +108,17 @@ const decreaseQty = (id) =>{
               </div>
               <div className='flex justify-between'>
                 <p>Grand Total</p>
-                <h2 className='font-bold'>${cartItems.length === 0 ? 0 : (Number(`${balance}`) + 33000).toFixed(2)} </h2>
+                <h2 className='font-bold'>N{cartItems.length === 0 ? 0 : (Number(`${balance}`) + 33000).toFixed(2)} </h2>
               </div>
             </div>
-            <button style={{backgroundColor:'#9C0001',color:'#FFE8F1'}} className='py-2 px-3 w-full' onClick={()=>setPayment(true)}>Buy Now</button>
+            <button style={{backgroundColor:'#9C0001',color:'#FFE8F1'}} className='py-2 px-3 w-full' onClick={()=>setOverlayVisible(true)}>Buy Now</button>
           </div>
 
         </div>
       </div>
       <Recommendations/>
     </div>
-    {payment && <Payment/>}
+    {isOverlayVisible && <Payment/>}
     </div>
   )
 }

@@ -20,7 +20,11 @@ export default {
         'light-gray': '#F7F7F7',
         'half-transparent': 'rgba(0, 0, 0, 0.5)',
       },
-      
+      backgroundImage:{
+        'desktop': "url('./src/assets/mobile hero.svg')",
+        'mobile': "url('./src/assets/hero4.svg')",
+        
+      },
       borderWidth: {
         1: '1px',
       },

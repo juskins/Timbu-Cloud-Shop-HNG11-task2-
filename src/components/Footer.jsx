@@ -6,23 +6,18 @@ const Footer = () => {
   return (
     <div className='py-8 px-4 lg:px-32 md:py-12 mx-auto max-w-[1440px] text-[#190028] bg-[#FAFAFB] md:bg-white'>
         <div className='lg:flex hidden justify-center lg:order-none order-2 items-center gap-14 '>
-            <div className=''>
-                <p className='font-bold text-2xl'>Fear of Missing Out?</p>
-                <p>Get the latest deals, updates and more</p>
+            <div className='lg:w-[221px]'>
+                <p className='font-bold text-[22px]'>Fear of Missing Out?</p>
+                <p className='text-[12px]'>Get the latest deals, updates and more</p>
             </div>
-            <div className='flex items-center gap-2 w-2/5'>
+            <div className='flex items-center gap-2'>
                 <input type="text" className='p-3 w-full' placeholder='Your Email Address' style={{border:'1px solid #C6BFC9'}}/>
                 <button style={{backgroundColor:'#9C0001'}} className='text-[#FFE8F1] p-3 w-52'><Link to='/products/8'>Subscribe Now</Link></button>
             </div>
         </div>
-        <div className='border-1 border-[#C6BFC9] my-8 w-[90%] hidden md:block'></div>
+        <div className='border-1 border-[#C6BFC9] my-8 mx-auto w-[90%] hidden md:block'></div>
 
         <footer className='flex flex-col gap-10'>
-            <div className='self-end hidden flex-col gap-3 w-96 lg:flex'>
-                <p className='font-bold'>Sign up for our newsletter</p>
-                <p className='border-b-2 pb-3 border-gray-400'>Your email here</p>
-            </div>
-
             <div className='flex lg:flex-row flex-col justify-between lg:items-start items-center'>
                 <div className='lg:order-none order-2 my-4 lg:my-0'>
                     <p className='font-bold block md:hidden text-center'>Get to us</p>

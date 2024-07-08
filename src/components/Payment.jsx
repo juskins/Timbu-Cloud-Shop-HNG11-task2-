@@ -1,14 +1,16 @@
-import React from 'react'
-import Checkout from '../pages/Checkout'
+import React, { useContext, useState } from 'react'
 import { BiCreditCard } from 'react-icons/bi'
+import { stateContext } from '../App'
 
 const Payment = () => {
+    const {handleOverlayClick} = useContext(stateContext)
+    
 
   return (
     <div className=''>
         
-        <div className='fixed max-w-[1440px] md:mx-auto inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50'>
-            <div className='bg-white text-[#190028] py-4 px-8 flex md:py-[48px] md:px-[64px] flex-col md-gap-9 gap-2  w-4/5 md:w-[604px] mx-6 my-0'>
+        <div onClick={handleOverlayClick} className='fixed max-w-[1440px] md:mx-auto inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50'>
+            <div onClick={(e) => e.stopPropagation()} className='bg-white text-[#190028] py-4 px-8 flex md:py-[48px] md:px-[64px] flex-col md-gap-9 gap-2  w-4/5 md:w-[604px] mx-6 my-0'>
                 <h2 className='font-normal lg:font-bold text-2xl border-b-none lg:border-b-1 border-[#ACACAC] pb-2'>Payment</h2>
                 <div className='flex items-center lg:hidden gap-2 bg-[#EDEBEE] py-2 px-3'>
                     <p className='text-[14px]'>Payment options</p>
@@ -16,20 +18,20 @@ const Payment = () => {
                 </div>
                 <div className='md:gap-2 lg:flex flex-col hidden'>
                     <p className='text-[20px] font-normal'>Pay With:</p>
-                    <div className='flex gap-4'>
+                    <form className='flex gap-4'>
                         <div className='flex'>
-                            <input type="radio" checked/>
+                            <input type="radio" name='radio' />
                             <p>Card</p>
                         </div>
                         <div className='flex text-[#83758B]'>
-                            <input type="radio" className='text-[#ACACAC]'/>
+                            <input type="radio" className='text-[#ACACAC]' name='radio'/>
                             <p>Bank</p>
                         </div>
                         <div className='flex text-[#83758B]'>
-                            <input type="radio" className='text-[#ACACAC]'/>
+                            <input type="radio" className='text-[#ACACAC]' name='radio'/>
                             <p>Transfer</p>
                         </div>
-                    </div>
+                    </form>
                 </div>
 
                 <form className='flex gap-2 lg:gap-4 flex-col mt-4'>

@@ -17,7 +17,7 @@ const Nav = () => {
             <input type="text" className='w-full py-2 px-3 ' style={{border:'1px solid #E1DEE3'}}/>
             <button className='absolute py-2 px-4 w-[26.08px] flex flex-col justify-center items-center right-0 text-[#EDEBEE] top-1/2 -translate-y-1/2  mr-[10px]' style={{backgroundColor:"#9C0001"}}><MdOutlineArrowRightAlt/></button>
         </div>
-        <div className='flex items-center gap-3 text-2xl text-[#190028]'>
+        <div className='flex items-center min-w-[156px]  gap-x-3 text-2xl text-[#190028]'>
             <div>
                 <button className=''><PiChatsBold /></button>
             </div>
@@ -29,13 +29,14 @@ const Nav = () => {
                 <Link to='checkout'>
                 <button className=''>
                     <div><PiShoppingCartBold/></div>
-                    <small className='absolute text-white rounded-full h-4 w-4 -top-2 -right-3 text-xs' style={{backgroundColor:`${cartItems.length === 0 ? 'white' : 'red'}`}}>{cartItems.length}</small>
+                    <small className='absolute text-white bg-[red] rounded-full h-4 w-4  -top-2 -right-3 text-xs' style={{display:`${cartItems.length === 0 ? 'none' : 'block'}`}}>{cartItems.length}</small>
                 </button>
                 </Link>
             </div>
-            <div className='w-9 h-9'>
-                <img src={avatar} alt="" className='rounded-full'/>
+            <div className='-mt-2'>
+            <img src={avatar} alt="" className=''/>
             </div>
+            
         </div>
     </div>
   )

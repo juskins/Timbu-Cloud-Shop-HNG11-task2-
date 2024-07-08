@@ -1,12 +1,13 @@
 
 
 import { Box, CircularProgress } from '@mui/material';
-import React, { useEffect, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
+import { stateContext } from '../App';
 
 const CustomFetch = (limit) => {
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null)
-    const [products, setProducts] = useState(null);
+    const {products,setProducts} = useContext(stateContext)
     useEffect(()=>{
         const controller = new AbortController()
         const fetchProducts = async()=>{
