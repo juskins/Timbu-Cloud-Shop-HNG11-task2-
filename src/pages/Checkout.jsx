@@ -47,7 +47,7 @@ const decreaseQty = (id) =>{
           <div className='flex flex-col gap-3  flex-wrap w-full'>
             {cartItems?.map(item=>(
               <div className='flex gap-4 items-center border-b-1 py-3' key={item.id}>
-              <img src={item.image} className='w-44 h-52 object-cover object-center' alt="" />
+              <img src={item.image} className='h-[109px] lg:w-44 lg:h-52 object-cover object-center' alt="" />
               <div className='flex items-center flex-grow justify-between flex-col  md:flex-row gap-4'>
                 <div>
                   <p className='font-bold text-sm mb-1'>{item.title}</p>
