@@ -59,7 +59,7 @@ const ProductPage = () => {
                         <p style={{color:'#83758B'}}>N30,000</p>
                         <p>15%</p>
                 </div>
-                <button style={{backgroundColor:'#9C0001'}} className='py-2 px-3 mb-6 w-full lg:w-96 text-[#FFE8F1]'>Buy Now</button>
+                <button style={{backgroundColor:'#9C0001'}} className='py-2 px-3 mb-6 w-full rounded lg:w-96 text-[#FFE8F1]'>Buy Now</button>
                 <div className='flex items-center gap-3' style={{color:'#83758B'}}>
                     <div className='flex gap-2 items-center' >
                         <span><AiOutlineShoppingCart/></span>

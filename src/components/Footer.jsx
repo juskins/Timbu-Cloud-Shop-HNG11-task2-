@@ -29,7 +29,7 @@ const Footer = () => {
                             <li className='font-bold'>Shop</li>
                             <li>Real Estate</li>
                             <li>Furniture</li>
-                            <li>Deco</li>
+                            <li>Decor</li>
                             <li>Bedding</li>
                             <li>Outdoor</li>
                         </ul>

@@ -26,7 +26,7 @@ const ProductList = () => {
   return (
     <div className='px-4 py-8 md:px-28 md:py-8 message max-w-[1440px] md:mx-auto'>
       <div className='flex justify-between'>
-        <p className='font-normal text-[#190028] text-2xl product-heading'>Our Products</p>
+        <p className='font-normal text-[#190028] text-[25px] product-heading'>Our Products</p>
         <p className='font-semibold  text-xl' style={{borderBottom:`2px solid ${message === 'Added to Cart' ? 'green' : 'red'}`}}>{message}</p>
       </div>
       <div className='grid gap-4  mt-3 grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 pb-3 border-none md:border-b-2'>

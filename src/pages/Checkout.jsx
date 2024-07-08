@@ -52,8 +52,8 @@ const decreaseQty = (id) =>{
             {cartItems?.map(item=>(
               <div className='flex gap-4 items-center border-b-1 py-3' key={item.id}>
               <img src={item.image} className='h-[109px] lg:w-44 lg:h-52 object-cover object-center' alt="" />
-              <div className='flex items-center flex-grow justify-between flex-col  md:flex-row gap-4'>
-                <div>
+              <div className='flex lg:items-center justify-between flex-col flex-grow md:flex-row gap-4'>
+                <div className=''>
                   <p className='font-bold text-sm mb-1'>{item.title}</p>
                   <div>
                     <div className='flex items-center gap-2'>
@@ -67,8 +67,8 @@ const decreaseQty = (id) =>{
                   </div>
                 </div>
 
-                <div className='flex flex-col self-start w-full  md:self-auto '>
-                  <div className='flex justify-between items-center gap-9'>
+                <div className='flex flex-col w-full'>
+                  <div className='flex items-center justify-between lg:justify-end  gap-9'>
                     <div className='flex gap-4 items-center'>
                       <button className='py-2 px-3 text-sm' style={{border:'1px solid #C6BFC9'}} onClick={()=>decreaseQty(item.id)}>-</button>
                       <span>{item.qty}</span>
@@ -111,7 +111,7 @@ const decreaseQty = (id) =>{
                 <h2 className='font-bold'>N{cartItems.length === 0 ? 0 : (Number(`${balance}`) + 33000).toFixed(2)} </h2>
               </div>
             </div>
-            <button style={{backgroundColor:'#9C0001',color:'#FFE8F1'}} className='py-2 px-3 w-full' onClick={()=>setOverlayVisible(true)}>Buy Now</button>
+            <button style={{backgroundColor:'#9C0001',color:'#FFE8F1'}} className='py-2 rounded px-3 w-full' onClick={()=>setOverlayVisible(true)}>Buy Now</button>
           </div>
 
         </div>
