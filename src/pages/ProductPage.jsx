@@ -9,14 +9,28 @@ import { BiCommentDots } from 'react-icons/bi';
 import { IoShareSocialOutline } from 'react-icons/io5';
 import { HiOutlineFlag } from 'react-icons/hi2';
 import Recommendations from '../components/Recommendations';
-import { useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import { stateContext } from '../App';
 
 
 
 const ProductPage = () => {
-  const {products} = useContext(stateContext)
+  const {products,cartItems, setCartItems,addToCart,setMessage} = useContext(stateContext)
+  const navigate = useNavigate()
   const {productID} = useParams()
+
+  const addProductToCart = ()=>{
+    const newProduct = {
+      ...products[Number(productID)-1],qty:1
+    }
+    let exists = cartItems.some(item => item.id === products[Number(productID)-1].id && item.name === products[Number(productID)-1].name);
+    if(!exists){
+      setCartItems([...cartItems,newProduct]);
+      addToCart();
+      navigate('/checkout')
+    }
+
+  }
 //   console.log({productID})
   return (
     <div className='lg:px-28 lg:py-8 px-6 py-0 box-border max-w-[1440px] md:mx-auto'>
@@ -59,7 +73,7 @@ const ProductPage = () => {
                         <p style={{color:'#83758B'}}>N30,000</p>
                         <p>15%</p>
                 </div>
-                <button style={{backgroundColor:'#9C0001'}} className='py-2 px-3 mb-6 w-full rounded lg:w-96 text-[#FFE8F1]'>Buy Now</button>
+                <button onClick={addProductToCart} className='py-2 px-3 bg-[#9C0001] mb-6 w-full rounded lg:w-96 text-[#FFE8F1]'>Buy Now</button>
                 <div className='flex items-center gap-3' style={{color:'#83758B'}}>
                     <div className='flex gap-2 items-center' >
                         <span><AiOutlineShoppingCart/></span>

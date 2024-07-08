@@ -4,15 +4,15 @@ import { Link } from 'react-router-dom'
 
 const Footer = () => {
   return (
-    <div className='py-8 px-4 lg:px-32 md:py-12 mx-auto max-w-[1440px] text-[#190028] bg-[#FAFAFB] md:bg-white'>
+    <div className='py-8 px-4 lg:px-32 text-[11px] md:py-12 mx-auto max-w-[1440px] text-[#190028] bg-[#FAFAFB] md:bg-white'>
         <div className='lg:flex hidden justify-center lg:order-none order-2 items-center gap-14 '>
             <div className='lg:w-[221px]'>
                 <p className='font-bold text-[22px]'>Fear of Missing Out?</p>
                 <p className='text-[12px]'>Get the latest deals, updates and more</p>
             </div>
             <div className='flex items-center gap-2'>
-                <input type="text" className='p-3 w-full' placeholder='Your Email Address' style={{border:'1px solid #C6BFC9'}}/>
-                <button style={{backgroundColor:'#9C0001'}} className='text-[#FFE8F1] p-3 w-52'><Link to='/products/8'>Subscribe Now</Link></button>
+                <input type="text" className='p-3 rounded w-full' placeholder='Your Email Address' style={{border:'1px solid #C6BFC9'}}/>
+                <button style={{backgroundColor:'#9C0001'}} className='text-[#FFE8F1] rounded p-3 w-52'><Link to='/products/8'>Subscribe Now</Link></button>
             </div>
         </div>
         <div className='border-1 border-[#C6BFC9] my-8 mx-auto w-[90%] hidden md:block'></div>
@@ -71,8 +71,8 @@ const Footer = () => {
                         <p className='font-bold'>Connect With us</p>
                         <p>Fear of Missing Out? Get the latest deals, updates and more</p>
                         <div className='relative'>
-                            <input type="text" placeholder='Enter email address' className='w-full py-2 px-3 bg-[#EDEBEE]' style={{border:'1px solid #E1DEE3'}}/>
-                            <button className='absolute py-2 px-4 w-[26.08px] flex flex-col justify-center items-center right-0 text-[#EDEBEE] top-1/2 -translate-y-1/2  mr-[10px]' style={{backgroundColor:"#9C0001"}}><MdOutlineArrowRightAlt/></button>
+                            <input type="text" placeholder='Enter email address' className='w-full rounded py-2 px-3 bg-[#EDEBEE]' style={{border:'1px solid #E1DEE3'}}/>
+                            <button className='absolute py-2 px-4 w-[26.08px] flex flex-col justify-center rounded items-center right-0 text-[#EDEBEE] top-1/2 -translate-y-1/2  mr-[10px]' style={{backgroundColor:"#9C0001"}}><MdOutlineArrowRightAlt/></button>
                         </div>
                 </div>
             </div>
