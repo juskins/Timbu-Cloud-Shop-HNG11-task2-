@@ -5,7 +5,8 @@ import Footer from './components/Footer'
 import { createContext, useState } from 'react';
 
 export const stateContext = createContext({
-  cartItems:[]
+  cartItems:[],
+  products:null
 });
 
 function App() {

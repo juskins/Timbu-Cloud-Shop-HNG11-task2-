@@ -20,7 +20,7 @@ const Header = () => {
     <div className='m-auto my-8 justify-center items-center flex gap-2 flex-col md:hidden w-full text-center'>
         <p className='text-[28px] leading-[33.6px] font-bold w-[219px]' style={{color:'#9C0001'}}>Stand Out in Bold Red Jacket</p>
         <p className='text-lg mb-4 text-[#190028]'>Elevate Your Style with Our Bold Red Jacket</p>
-        <button className='w-32 text-[#FFE8F1] p-2' style={{backgroundColor:'#9C0001'}}>Shop Now</button>
+        <button className='w-32 text-[#FFE8F1] p-2' style={{backgroundColor:'#9C0001'}} onClick={goToProducts}>Shop Now</button>
        </div>
 
    

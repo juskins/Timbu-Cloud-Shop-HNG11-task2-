@@ -1,13 +1,12 @@
 import { Box, CircularProgress } from '@mui/material';
 import React, { useContext, useEffect, useState } from 'react'
 import ProductItem from './ProductItem';
-import { useOutletContext } from 'react-router-dom';
 import { stateContext } from '../App';
 import CustomFetch from '../contexts/CustomFetch';
 
 const ProductList = () => {
   
-  const {products, error, loading} = CustomFetch('')
+  const {products, error, loading} = CustomFetch()
   const {message} = useContext(stateContext)
   if(loading){
     return(
@@ -31,7 +30,7 @@ const ProductList = () => {
         <p className='font-semibold  text-xl' style={{borderBottom:`2px solid ${message === 'Added to Cart' ? 'green' : 'red'}`}}>{message}</p>
       </div>
       <div className='grid gap-4  mt-3 grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 pb-3 border-none md:border-b-2'>
-        {products?.map(product=>(
+        {products.slice(0,12)?.map(product=>(
           <ProductItem product={product} key={product.id}/>
         ))}
       </div>

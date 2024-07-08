@@ -17,13 +17,13 @@ import { stateContext } from '../App';
 const ProductPage = () => {
   const {products} = useContext(stateContext)
   const {productID} = useParams()
-  console.log(productID)
+//   console.log({productID})
   return (
     <div className='lg:px-28 lg:py-8 px-6 py-0 box-border max-w-[1440px] md:mx-auto'>
         <div className="flex lg:flex-nowrap flex-wrap lg:gap-2 lg:h-[372px] w-full">
-            <img src={products[productID].image} alt="" className='w-[90%] h-[327px] lg:h-full object-top object-cover'/>
-            <img src={products[productID].image} alt="" className='w-[166px] lg:h-full object-fill h-[200px]' />
-            <img src={products[productID].image} alt="" className='lg:w-[166px] lg:h-full   object-fill h-[200px]' />
+            <img src={products[Number(productID)-1].image} alt="" className='w-[90%] h-[327px] lg:h-full object-top object-contain'/>
+            <img src={products[Number(productID)-1].image} alt="" className='w-[166px] m-auto lg:h-full object-contain h-[200px]' />
+            <img src={products[Number(productID)-1].image} alt="" className='lg:w-[166px] lg:h-full m-auto object-contain h-[200px]' />
         </div>
 
         <div className='my-6 flex flex-col gap-[28px] lg:flex-row text-[#190028]'>
@@ -39,34 +39,29 @@ const ProductPage = () => {
                 <div className='flex flex-col gap-2'>
                     <p className='font-bold'>Sizes</p>
                     <div className='flex items-center gap-2'>
-                        <div className='bg-gray-100 py-1 px-2'>XS</div>
-                        <div className='bg-gray-100 py-1 px-2'>S</div>
-                        <div className='bg-gray-100 py-1 px-2'>M</div>
-                        <div className='bg-gray-100 py-1 px-2'>L</div>
-                        <div className='bg-gray-100 py-1 px-2'>XL</div>
+                        <button className='bg-gray-100 py-1 px-2'>XS</button>
+                        <button className='bg-gray-100 py-1 px-2'>S</button>
+                        <button className='bg-gray-100 py-1 px-2'>M</button>
+                        <button className='bg-gray-100 py-1 px-2'>L</button>
+                        <button className='bg-gray-100 py-1 px-2'>XL</button>
                     </div>
                 </div>
                 <div className='flex flex-col gap-2'>
                     <p className='font-bold'>Find Similar Listings</p>
                     <div className='flex items-center gap-2'>
-                        <div className='bg-gray-100 p-1'>By Size</div>
-                        <div className='bg-gray-100 p-1'>By Color</div>
-                        <div className='bg-gray-100 p-1'>By Now with Tags</div>
+                        <button className='bg-gray-100 p-2'>By Size</button>
+                        <button className='bg-gray-100 p-2'>By Color</button>
+                        <button className='bg-gray-100 p-2'>By Now with Tags</button>
                     </div>
                 </div>
-                <hr className='my-6' style={{border:'1px solid #C6BFC9'}}/>
-                <div className="flex gap-2 mb-6">
+                <div className="flex gap-2 my-6">
                         <p className='font-bold'>N{products[productID].price}</p>
                         <p style={{color:'#83758B'}}>N30,000</p>
                         <p>15%</p>
                 </div>
                 <button style={{backgroundColor:'#9C0001'}} className='py-2 px-3 mb-6 w-full lg:w-96 text-[#FFE8F1]'>Buy Now</button>
                 <div className='flex items-center gap-3' style={{color:'#83758B'}}>
-                    <div className='flex items-center'>
-                        <span><CiHeart className='text-red-600'/></span>
-                        <span>Like and save for later</span>
-                    </div>
-                    <div className='flex items-center' >
+                    <div className='flex gap-2 items-center' >
                         <span><AiOutlineShoppingCart/></span>
                         <span>Add to Cart</span>
                     </div>
@@ -82,23 +77,23 @@ const ProductPage = () => {
                     <p className='text-lg font-semibold' style={{color:'#9C0001'}}>Sure Fit</p>
                     <div className='flex justify-between items-center'> 
                         <div className='flex gap-2'>
-                            <div className='flex items-center gap-2 py-1 px-2 border'>
+                            <button className='flex items-center gap-2 py-1 px-2 border'>
                                 <span><CiHeart className='text-red-600'/></span>
                                 <span>Like</span>
-                            </div>
-                            <div className='flex items-center gap-2 text-gray-400 py-1 px-2 border'>
+                            </button>
+                            <button className='flex items-center gap-2 text-gray-400 py-1 px-2 border'>
                                 <span><BiCommentDots/></span>
                                 <span>Comment</span>
-                            </div>
-                            <div className='flex items-center gap-2 text-gray-400 py-1 px-2 border'>
+                            </button>
+                            <button className='flex items-center gap-2 text-gray-400 py-1 px-2 border'>
                                 <span><IoShareSocialOutline/></span>
                                 <span>Share</span>
-                            </div>
+                            </button>
                         </div>
-                        <div className='flex items-center gap-2 text-gray-400 py-1 px-2 border'>
+                        <button className='flex items-center gap-2 text-gray-400 py-1 px-2 border'>
                             <span><HiOutlineFlag/></span>
                             <span>Report</span>
-                        </div>
+                        </button>
                         
                     </div>
                 </div>

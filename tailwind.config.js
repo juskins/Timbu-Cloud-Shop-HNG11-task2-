@@ -49,6 +49,9 @@ export default {
       },
       color:{
         whiter:'#FFE8F1'
+      },
+      boxShadow:{
+        shadow:'2px 4px 12px rgba(0,0,0,0.5)'
       }
       
     },
