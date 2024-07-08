@@ -51,7 +51,7 @@ const decreaseQty = (id) =>{
           <div className='flex flex-col gap-3  flex-wrap w-full'>
             {cartItems?.map(item=>(
               <div className='flex gap-4 items-center border-b-1 py-3' key={item.id}>
-              <img src={item.image} className='h-[109px] lg:w-44 lg:h-52 object-cover object-center' alt="" />
+              <img src={item.image} className='h-full w-[100px] lg:w-44 lg:h-52 object-cover object-center' alt="" />
               <div className='flex lg:items-center justify-between flex-col flex-grow md:flex-row gap-4'>
                 <div className=''>
                   <p className='font-bold text-sm mb-1'>{item.title}</p>
@@ -68,14 +68,14 @@ const decreaseQty = (id) =>{
                 </div>
 
                 <div className='flex flex-col w-full'>
-                  <div className='flex items-center justify-between lg:justify-end  gap-9'>
+                  <div className='flex items-center flex-grow justify-between  lg:justify-end  gap-9'>
                     <div className='flex gap-4 items-center'>
                       <button className='py-2 px-3 text-sm' style={{border:'1px solid #C6BFC9'}} onClick={()=>decreaseQty(item.id)}>-</button>
                       <span>{item.qty}</span>
                       <button className='py-2 px-3 text-sm' style={{border:'1px solid #C6BFC9'}} onClick={()=>increaseQty(item.id)}>+</button>
                     </div>
                     <div>
-                      <p className='font-bold '>N{item.price}</p>
+                      <p className='font-bold '>N{item.price.toFixed(2)}</p>
                       <button className='self-end text-sm cursor-pointer' onClick={()=>removeFromCart(item.id)}>Remove</button>
                     </div>
                   </div>
