@@ -19,7 +19,6 @@ const ProductItem = ({product}) => {
       document.querySelector('.message').scrollIntoView();
       setTimeout(() => {
         setMessage('');
-        document.querySelector('.productItem').scrollIntoView();
       }, 1000);
     }
     else{
@@ -27,7 +26,6 @@ const ProductItem = ({product}) => {
       document.querySelector('.message').scrollIntoView();
       setTimeout(() => {
           setMessage('');
-          document.querySelector('.productItem').scrollIntoView();
       }, 1000);
   }
 
@@ -35,7 +33,7 @@ const ProductItem = ({product}) => {
 
   }
   return (
-    <div className="productItem hover:shadow-shadow p-4 md:gap-2 gap-[2px] flex flex-col justify-center flex-grow box-border overflow-hidden">
+    <div className="hover:shadow-shadow p-4 md:gap-2 gap-[2px] flex flex-col justify-center flex-grow box-border overflow-hidden">
         <Link to={`/products/${product.id}`}><img className=' h-[180px] w-[166px] md:h-[270px] md:w-[247px]' src={product.image} alt=""/></Link>
         <div className='flex flex-col gap-2 text-[#190028]'>
           <div className="font-bold text-[14px] w-60 leading-[16.8px] text-[#190028] text-left">{product.title.substring(0, 30)}</div>

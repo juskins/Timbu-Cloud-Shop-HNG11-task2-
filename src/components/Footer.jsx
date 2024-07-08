@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 
 const Footer = () => {
   return (
-    <div className='py-8 px-4 lg:px-32 text-[11px] md:py-12 mx-auto max-w-[1440px] text-[#190028] bg-[#FAFAFB] md:bg-white'>
+    <div className='py-8 px-4 lg:px-32 text-[12px] md:py-12 mx-auto max-w-[1440px] text-[#190028] bg-[#FAFAFB] md:bg-white'>
         <div className='lg:flex hidden justify-center lg:order-none order-2 items-center gap-14 '>
             <div className='lg:w-[221px]'>
                 <p className='font-bold text-[22px]'>Fear of Missing Out?</p>

@@ -103,8 +103,8 @@ const decreaseQty = (id) =>{
                 </div>
               </div>
               <div className='flex items-center border-b-1 pb-4'>
-                <input type="text" placeholder='Discount code or gift card' className=' py-2 px-3 mr-3' style={{border:'1px solid #A69F9F'}}/>
-                <button style={{backgroundColor:'#9C0001',color:'#FFE8F1'}} className='py-2 px-3'>Apply</button>
+                <input type="text" placeholder='Discount code or gift card' className=' py-2 rounded px-3 mr-3' style={{border:'1px solid #A69F9F'}}/>
+                <button style={{backgroundColor:'#9C0001',color:'#FFE8F1'}} className='py-2 rounded px-3'>Apply</button>
               </div>
               <div className='flex justify-between'>
                 <p>Grand Total</p>
