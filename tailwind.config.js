@@ -51,7 +51,7 @@ export default {
         whiter:'#FFE8F1'
       },
       boxShadow:{
-        shadow:'2px 4px 12px rgba(0,0,0,0.5)'
+        shadow:'2px 4px 12px 0 rgba(0,0,0,0.05)'
       }
       
     },
