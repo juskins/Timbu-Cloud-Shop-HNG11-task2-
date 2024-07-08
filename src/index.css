@@ -3,6 +3,16 @@
 @tailwind utilities;
 
 
+
+
+
+body {
+  font-family: "Inter", sans-serif;
+  
+}
+
+
+  
 .header-background {
     background-image: url('../src/assets/mobile hero.svg');
     background-size: cover;
