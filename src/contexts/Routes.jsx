@@ -6,17 +6,19 @@ import Confirmation from "../pages/Confirmation";
 import App from "../App";
 import ProductPage from "../pages/ProductPage";
 import Payment from "../components/Payment";
+import ErrorPage from "../pages/ErrorPage";
 
 
 const Routes = createBrowserRouter([
     {
         path:'/',
         element:<App/>,
+        errorElement:<ErrorPage/>,
         children:[
             {
                 index:true,
-                element:<Home/>
-
+                element:<Home/>,
+                
             },
             {
                 path:'checkout',
