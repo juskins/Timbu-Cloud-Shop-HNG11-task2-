@@ -34,17 +34,17 @@ const Payment = () => {
                     </form>
                 </div>
 
-                <form className='flex gap-2 lg:gap-4 flex-col mt-4'>
+                <form className='flex gap-2 lg:gap-4 flex-col  mt-4'>
                     <div className='flex flex-col md-gap-4 gap-2 '>
                         <label htmlFor="" className='lg:text-[20px] text-[14px] font-normal'>Card Number</label>
                         <input type="text" placeholder='1234 5678 9101 1121'style={{border:"1px solid #ACACAC"}} className='rounded py-3 w-full pl-4 text-[12px]'/>
                     </div>
-                    <div className="flex md:gap-4 md:flex-row flex-col gap-2">
-                        <div className='flex flex-col gap-4 md:w-1/2'>
+                    <div className="flex md:gap-4  gap-2">
+                        <div className='flex flex-col gap-4 w-1/2'>
                             <label htmlFor="" className='lg:text-[20px] text-[14px] font-normal'>Expiration Date</label>
                             <input type="datetime" placeholder='MM/YY' style={{border:"1px solid #ACACAC"}} className='rounded py-3 pl-4 text-[12px]'/>
                         </div>
-                        <div className='flex flex-col gap-4 md:w-1/2'>
+                        <div className='flex flex-col gap-4 w-1/2'>
                             <label htmlFor="" className='lg:text-[20px] text-[14px]  font-normal'>CVV</label>
                             <input type="Number" id="" placeholder='123' style={{border:"1px solid #ACACAC"}} className='rounded py-3 pl-4 text-[12px]'/>
                         </div>
@@ -55,7 +55,7 @@ const Payment = () => {
                     </div>
                 </form>
                 <div className='flex flex-col gap-6'>
-                    <button className='p-2 bg-[#9C0001] text-[#FFE8F1]'>Continue</button>
+                    <button className='p-2 rounded bg-[#9C0001] text-[#FFE8F1]'>Continue</button>
                     <p className='text-[12px] text-[#190028] lg-text-[#ACACAC]'>Your personal data will be used to process your order, support your experience throughout 
                         this website, and for other purposes described in our privacy policy.</p>
                 </div>

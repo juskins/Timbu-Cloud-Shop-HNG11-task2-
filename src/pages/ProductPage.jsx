@@ -35,7 +35,7 @@ const ProductPage = () => {
   return (
     <div className='lg:px-28 lg:py-8 px-6 py-0 box-border max-w-[1440px] md:mx-auto'>
         <div className="flex lg:flex-nowrap flex-wrap lg:gap-2 lg:h-[372px] w-full">
-            <img src={products[Number(productID)-1].image} alt="" className='w-[90%] h-[327px] lg:h-full object-top object-contain'/>
+            <img src={products[Number(productID)-1].image} alt="" className='w-[90%] m-auto h-[327px] lg:h-full object-top object-contain'/>
             <img src={products[Number(productID)-1].image} alt="" className='w-[166px] m-auto lg:h-full object-contain h-[200px]' />
             <img src={products[Number(productID)-1].image} alt="" className='lg:w-[166px] lg:h-full m-auto object-contain h-[200px]' />
         </div>
@@ -75,6 +75,10 @@ const ProductPage = () => {
                 </div>
                 <button onClick={addProductToCart} className='py-2 px-3 bg-[#9C0001] mb-6 w-full rounded lg:w-96 text-[#FFE8F1]'>Buy Now</button>
                 <div className='flex items-center gap-3' style={{color:'#83758B'}}>
+                    <div className='gap-2 items-center hidden lg:flex' >
+                        <span><CiHeart className='text-[#F73737]'/></span>
+                        <span>Like and save for later</span>
+                    </div>
                     <div className='flex gap-2 items-center' >
                         <span><AiOutlineShoppingCart/></span>
                         <span>Add to Cart</span>
