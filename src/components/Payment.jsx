@@ -40,11 +40,11 @@ const Payment = () => {
                         <input type="text" placeholder='1234 5678 9101 1121'style={{border:"1px solid #ACACAC"}} className='rounded py-3 w-full pl-4 text-[12px]'/>
                     </div>
                     <div className="flex md:gap-4  gap-2">
-                        <div className='flex flex-col gap-4 w-1/2'>
+                        <div className='flex flex-col gap-2 lg:gap-4 w-1/2'>
                             <label htmlFor="" className='lg:text-[20px] text-[14px] font-normal'>Expiration Date</label>
                             <input type="datetime" placeholder='MM/YY' style={{border:"1px solid #ACACAC"}} className='rounded py-3 pl-4 text-[12px]'/>
                         </div>
-                        <div className='flex flex-col gap-4 w-1/2'>
+                        <div className='flex flex-col gap-2 lg:gap-4 w-1/2'>
                             <label htmlFor="" className='lg:text-[20px] text-[14px]  font-normal'>CVV</label>
                             <input type="Number" id="" placeholder='123' style={{border:"1px solid #ACACAC"}} className='rounded py-3 pl-4 text-[12px]'/>
                         </div>
