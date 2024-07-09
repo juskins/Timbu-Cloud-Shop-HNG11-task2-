@@ -4,11 +4,11 @@ import { Link } from 'react-router-dom'
 
 const Footer = () => {
   return (
-    <div className='py-8 px-4 lg:px-32 text-[12px] md:py-12 mx-auto max-w-[1440px] text-[#190028] bg-[#FAFAFB] md:bg-white'>
+    <div className='py-8 px-4 lg:px-32 lg:text-[12px] text-[14px] md:py-12 mx-auto max-w-[1440px] text-[#190028] bg-[#FAFAFB] md:bg-white'>
         <div className='lg:flex hidden justify-center lg:order-none order-2 items-center gap-14 '>
             <div className='lg:w-[221px]'>
                 <p className='font-bold text-[22px]'>Fear of Missing Out?</p>
-                <p className='text-[12px]'>Get the latest deals, updates and more</p>
+                <p className=''>Get the latest deals, updates and more</p>
             </div>
             <div className='flex items-center gap-2'>
                 <input type="text" className='p-3 rounded w-full' placeholder='Your Email Address' style={{border:'1px solid #C6BFC9'}}/>
