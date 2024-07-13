@@ -22,7 +22,7 @@ body {
 
 @media (max-width:768px) {
     .header-background {
-        background-image: url('../src/assets/mobile\ header.png');
+        background-image: url('../src/assets/mobile-header.png');
         background-size: cover;
         background-position: right top;
     }
