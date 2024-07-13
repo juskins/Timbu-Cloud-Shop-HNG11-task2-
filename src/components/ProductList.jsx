@@ -47,7 +47,7 @@ const ProductList = () => {
   
   <div className=" m-auto">
     <div>
-      <nav className="isolate inline-flex -space-x-px rounded-md shadow-sm" aria-label="Pagination">
+      <nav className="isolate inline-flex -space-x-px rounded-md gap-2 shadow-sm" aria-label="Pagination">
         <button onClick={()=> page !==1 && setPage(page-1)}  className="relative inline-flex items-center rounded-l-md px-2 py-2 text-gray-400 ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus:z-20 focus:outline-offset-0">
           <span className="sr-only">Previous</span>
           <svg className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
@@ -55,10 +55,10 @@ const ProductList = () => {
           </svg>
         </button>
         {/* <!-- Current: "z-10 bg-indigo-600 text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600", Default: "text-gray-900 ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus:outline-offset-0" --> */}
-        <button onClick={()=>{setPage(1);setFocusedButton(1);}} aria-current="page" className="relative z-10 inline-flex items-center border-gray-300 border  px-4 py-2 text-sm font-semibold text-gray-900 focus:z-20 focus-visible:outline" style={{backgroundColor:focusedButton === 1 ? '#972222' : ''}}>1</button>
-        <button onClick={()=>{setPage(2);setFocusedButton(2);}} className="relative inline-flex items-center px-4 py-2 text-sm font-semibold text-gray-900 border-gray-300 border " style={{backgroundColor:focusedButton === 2 ? '#972222' : ''}}>2</button>
-        <button onClick={()=>{setPage(3);setFocusedButton(3);}} className="relative items-center px-4 py-2 text-sm font-semibold text-gray-900 border-gray-300 border md:inline-flex" style={{backgroundColor:focusedButton === 3 ? '#972222' : ''}}>3</button>
-        <button onClick={()=>page !==3 && setPage(page+1)} className="relative inline-flex items-center rounded-r-md px-2 py-2 text-gray-400 border-gray-300 border hover:bg-gray-50 ">
+        <button onClick={()=>{setPage(1);setFocusedButton(1);}} aria-current="page" className="relative rounded inline-flex items-cente border  px-4 py-2 text-sm font-semibold " style={{borderColor:focusedButton === 1 ? '#972222' : '',color:focusedButton === 1 ? '#972222':''}}>1</button>
+        <button onClick={()=>{setPage(2);setFocusedButton(2);}} className="relative inline-flex items-center font-bold  rounded px-4 py-2 text-sm  border " style={{borderColor:focusedButton === 2 ? '#972222' : '',color:focusedButton === 2 ? '#972222':''}}>2</button>
+        <button onClick={()=>{setPage(3);setFocusedButton(3);}} className="relative items-center px-4 py-2 font-bold  rounded text-sm text-gray-900 border md:inline-flex" style={{borderColor:focusedButton === 3 ? '#972222' : '',color:focusedButton === 3 ? '#972222':''}}>3</button>
+        <button onClick={()=>page !==3 && setPage(page+1)} className="relative inline-flex items-center rounded-r-md px-2 py-2 text-gray-400  border hover:bg-gray-50 ">
           <span className="sr-only">Next</span>
           <svg className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
             <path fillRule="evenodd" d="M7.21 14.77a.75.75 0 01.02-1.06L11.168 10 7.23 6.29a.75.75 0 111.04-1.08l4.5 4.25a.75.75 0 010 1.08l-4.5 4.25a.75.75 0 01-1.06-.02z" clipRule="evenodd" />
