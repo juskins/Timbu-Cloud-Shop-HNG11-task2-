@@ -11,7 +11,11 @@ const CustomFetch = (count) => {
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null)
     const {products,page,setProducts} = useContext(stateContext)
-    const base_Url = `/api/products?organization_id=5218a98727a849f28eed4ad0a3d7882f&reverse_sort=false&page=${count}&size=12&Appid=0TBBVYW7FEHMSPB&Apikey=8127c29eabc64cb283182f744614204720240712171510848537`
+
+    const apiKey = import.meta.env.VITE_API_KEY;
+    const apiId = import.meta.env.VITE_API_ID;
+    
+    const base_Url = `/api/products?organization_id=5218a98727a849f28eed4ad0a3d7882f&reverse_sort=false&page=${count}&size=12&Appid=${apiId}&Apikey=${apiKey}`
 
     useEffect(()=>{
         const controller = new AbortController()
