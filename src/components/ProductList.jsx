@@ -69,7 +69,6 @@ const ProductList = () => {
           </div>
         </div>
 
-        <button className='md:hidden block m-auto border-1 py-2 px-3 w-[166px] border:[#C6BFC9] text-[#9E94A5] text-[12px]'>See more</button>
     </div>
   )
 }

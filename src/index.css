@@ -14,7 +14,7 @@ body {
 
   
 .header-background {
-    background-image: url('../src/assets/mobile hero.svg');
+    background-image: url('../src/assets/header.png');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -22,7 +22,7 @@ body {
 
 @media (max-width:768px) {
     .header-background {
-        background-image: url('../src/assets/hero.svg');
+        background-image: url('../src/assets/mobile\ header.png');
         background-size: cover;
         background-position: right top;
     }
