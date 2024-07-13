@@ -2,6 +2,7 @@ import React, { useContext, useState } from 'react'
 import Recommendations from '../components/Recommendations';
 import { stateContext } from '../App';
 import Payment from '../components/Payment';
+import { PiTrashSimpleLight } from 'react-icons/pi';
 
 
 
@@ -9,20 +10,27 @@ const Checkout = () => {
   const {cartItems,setCartItems,setCartCount} = useContext(stateContext);
   const {isOverlayVisible,setOverlayVisible} =useContext(stateContext)
 
-  const balance = cartItems.reduce((total,item)=>Number(item.price)+ total, 0).toFixed(2)
+  // console.log(cartItems)
 
+  const balance = cartItems?.reduce((total,item)=>Number(item?.current_price[0].NGN[0])+ total,0) || 0
+  
   const removeFromCart = (id)=>{
     setCartCount(cartCount=>cartCount-1)
     let newCartItems = cartItems.filter(item=>item.id !== id);
     setCartItems(newCartItems);
 }
 
+const clearCart = ()=>{
+  setCartItems([])
+}
+
 const increaseQty = (id) =>{
   cartItems.map(item=>{
       if(item.id === id){
           item.qty+=1;
-          item.price = item.price * item.qty;
+          item.current_price[0].NGN[0] *= item.qty;
           setCartItems([...cartItems])
+          console.log(cartItems)
       }
   })
 }
@@ -30,7 +38,7 @@ const decreaseQty = (id) =>{
   cartItems.map(item=>{
       if(item.id === id){
           if(item.qty !=1){
-              item.price = item.price / item.qty;
+              item.current_price[0].NGN[0] /= item.qty;
               item.qty-=1;
               setCartItems([...cartItems])
           }
@@ -50,11 +58,11 @@ const decreaseQty = (id) =>{
         <div className = 'flex lg:flex-row gap-12 flex-col'>
           <div className='flex flex-col gap-3  flex-wrap w-full'>
             {cartItems?.map(item=>(
-              <div className='flex gap-4 items-center border-b-1 py-3' key={item.id}>
-              <img src={item.image} className='h-full w-[100px] lg:w-44 lg:h-52 object-cover object-center' alt="" />
+              <div className='flex gap-4 items-center border-b-1 py-3' key={item.unique_id}>
+              <img src={`https://api.timbu.cloud/images/${item.photos[0].url}`} className='h-full w-[100px] lg:w-44 lg:h-52 object-cover object-center' alt="" />
               <div className='flex lg:items-center justify-between flex-col flex-grow md:flex-row gap-4'>
                 <div className=''>
-                  <p className='font-bold text-sm mb-1'>{item.title}</p>
+                  <p className='font-bold text-sm mb-1'>{item.name}</p>
                   <div>
                     <div className='flex items-center gap-2'>
                           <p className='text-sm'>Sizes</p>
@@ -75,7 +83,7 @@ const decreaseQty = (id) =>{
                       <button className='py-2 px-3 text-sm' style={{border:'1px solid #C6BFC9'}} onClick={()=>increaseQty(item.id)}>+</button>
                     </div>
                     <div>
-                      <p className='font-bold '>N{item.price.toFixed(2)}</p>
+                      <p className='font-bold '>N{item.current_price[0].NGN[0].toFixed(2)}</p>
                       <button className='self-end text-sm cursor-pointer' onClick={()=>removeFromCart(item.id)}>Remove</button>
                     </div>
                   </div>
@@ -85,6 +93,7 @@ const decreaseQty = (id) =>{
             </div>
             ))}
 
+            {cartItems.length > 0 && <button onClick={clearCart} className='self-end text-[#972222] flex items-center gap-1 py-2 px-4 border rounded-lg border-[#972222]'><PiTrashSimpleLight/> <p>Clear Cart</p></button>}
             
           </div>
           
@@ -95,7 +104,7 @@ const decreaseQty = (id) =>{
               <div className='flex flex-col gap-1'>
                 <div className='flex justify-between'>
                   <p>Subtotal ({cartItems.length}) items</p>
-                  <p>N{balance}</p>
+                  <p>N{balance.toLocaleString()}</p>
                 </div>
                 <div className='flex justify-between'>
                   <p>Shipping and handling fees</p>
@@ -108,7 +117,7 @@ const decreaseQty = (id) =>{
               </div>
               <div className='flex justify-between'>
                 <p>Grand Total</p>
-                <h2 className='font-bold'>N{cartItems.length === 0 ? 0 : (Number(`${balance}`) + 33000).toFixed(2)} </h2>
+                <h2 className='font-bold'>N{cartItems.length === 0 ? 0 : (Number(`${balance}`) + 33000).toLocaleString()} </h2>
               </div>
             </div>
             <button style={{backgroundColor:'#9C0001',color:'#FFE8F1'}} className='py-2 rounded px-3 w-full' onClick={()=>setOverlayVisible(true)}>Buy Now</button>

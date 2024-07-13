@@ -4,22 +4,27 @@ import { Box, CircularProgress } from '@mui/material';
 import React, { useContext, useEffect, useState } from 'react'
 import { stateContext } from '../App';
 
-const CustomFetch = () => {
+
+// APP_ID Appid
+// API_KEY Apikey
+const CustomFetch = (count) => {
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null)
-    const {products,setProducts} = useContext(stateContext)
+    const {products,page,setProducts} = useContext(stateContext)
+    const base_Url = `/api/products?organization_id=5218a98727a849f28eed4ad0a3d7882f&reverse_sort=false&page=${count}&size=12&Appid=0TBBVYW7FEHMSPB&Apikey=8127c29eabc64cb283182f744614204720240712171510848537`
+
     useEffect(()=>{
         const controller = new AbortController()
         const fetchProducts = async()=>{
             try{
-                const response = await fetch(`https://fakestoreapi.com/products`);
+                const response = await fetch(base_Url);
                 if(!response.ok){
                     // ?limit=4
                     throw new Error('server error')
                 }
                 const data = await response.json();
-                setProducts(data)
-                // console.log(data)
+                setProducts(data.items)
+                console.log(data.items)
                 
             }
             catch(error){
@@ -35,7 +40,7 @@ const CustomFetch = () => {
         return ()=>{
             controller.abort()
         }
-    },[])
+    },[page])
     
     
     

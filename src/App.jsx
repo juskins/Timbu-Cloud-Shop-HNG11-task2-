@@ -15,6 +15,7 @@ function App() {
   const [cartCount, setCartCount] = useState(0)
   const [products, setProducts] = useState(null);
   const [isOverlayVisible, setOverlayVisible] = useState(false);
+  const [page, setPage] = useState(1)
 
   const addToCart = ()=>{
     setCartCount(cartCount=>cartCount+1);
@@ -32,7 +33,8 @@ function App() {
       isOverlayVisible,setOverlayVisible,handleOverlayClick,
       cartItems,setCartItems,
       message,setMessage,
-      cartCount,setCartCount
+      cartCount,setCartCount,
+      page, setPage
     }}>
       <Nav />
       <Outlet />
