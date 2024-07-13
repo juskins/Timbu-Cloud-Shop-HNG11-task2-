@@ -24,10 +24,8 @@ const ProductItem = ({product}) => {
     let exists = cartItems.some(item => item.id === product.id && item.name === product.name);
     if(!exists){
       setCartItems([...cartItems,newProduct]);
-      console.log(cartItems)
       addToCart();
       setMessage('Added to Cart')
-      console.log(cartItems)
       document.querySelector('.message').scrollIntoView();
       setTimeout(() => {
         setMessage('');

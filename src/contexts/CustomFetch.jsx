@@ -28,7 +28,6 @@ const CustomFetch = (count) => {
                 }
                 const data = await response.json();
                 setProducts(data.items)
-                console.log(data)
                 
             }
             catch(error){

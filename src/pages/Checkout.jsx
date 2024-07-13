@@ -31,7 +31,7 @@ const increaseQty = (id) =>{
           item.qty+=1;
           item.current_price *= item.qty;
           setCartItems([...cartItems])
-          console.log(cartItems)
+          // console.log(cartItems)
       }
   })
 }

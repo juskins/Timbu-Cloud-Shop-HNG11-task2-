@@ -38,7 +38,7 @@ useEffect(()=>{
             }
             const data = await response.json();
             setProduct(data)
-            console.log(data)
+            // console.log(data)
             
         }
         catch(error){
