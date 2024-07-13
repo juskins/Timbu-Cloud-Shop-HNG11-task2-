@@ -5,9 +5,16 @@ import { stateContext } from '../App';
 import CustomFetch from '../contexts/CustomFetch';
 
 const ProductList = () => {
-  const {message,page,setPage} = useContext(stateContext)
-  const {products, error, loading} = CustomFetch(page)
+  const {message,page,setPage,searchTerm} = useContext(stateContext)
+  const {products, error, loading} = CustomFetch(page);
   const [focusedButton, setFocusedButton] = useState(null);
+  const [filter, setFilter] = useState([])
+  useEffect(()=>{
+    const filteredProducts = products?.filter((product) =>
+      product.name.toLowerCase().includes(searchTerm.toLowerCase())
+    );
+    setFilter(filteredProducts)
+  },[products, searchTerm])
   // console.log(products)
   if(loading){
     return(
@@ -31,7 +38,7 @@ const ProductList = () => {
         <p className='font-semibold  text-xl' style={{borderBottom:`2px solid ${message === 'Added to Cart' ? 'green' : 'red'}`}}>{message}</p>
       </div>
       <div className='grid gap-4  mt-3 grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 pb-3 border-none md:border-b-2'>
-        {products?.map(product=>(
+        {filter?.map(product=>(
           <ProductItem product={product} key={product.id}/>
         ))}
       </div>

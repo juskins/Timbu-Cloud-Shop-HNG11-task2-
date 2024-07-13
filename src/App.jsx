@@ -15,7 +15,13 @@ function App() {
   const [cartCount, setCartCount] = useState(0)
   const [products, setProducts] = useState(null);
   const [isOverlayVisible, setOverlayVisible] = useState(false);
-  const [page, setPage] = useState(1)
+  const [page, setPage] = useState(1);
+  const [searchTerm, setSearchTerm] = useState('');
+
+  const handleSearchChange = (event) => {
+    setSearchTerm(event.target.value);
+  };
+
 
   const addToCart = ()=>{
     setCartCount(cartCount=>cartCount+1);
@@ -34,7 +40,8 @@ function App() {
       cartItems,setCartItems,
       message,setMessage,
       cartCount,setCartCount,
-      page, setPage
+      page, setPage,
+      searchTerm, setSearchTerm,handleSearchChange,
     }}>
       <Nav />
       <Outlet />
