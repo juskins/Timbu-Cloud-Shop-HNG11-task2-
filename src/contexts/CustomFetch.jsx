@@ -1,6 +1,3 @@
-
-
-import { Box, CircularProgress } from '@mui/material';
 import React, { useContext, useEffect, useState } from 'react'
 import { stateContext } from '../App';
 
@@ -14,9 +11,9 @@ const CustomFetch = (count) => {
 
     const apiKey = import.meta.env.VITE_API_KEY;
     const apiId = import.meta.env.VITE_API_ID;
+    const orgId = import.meta.env.VITE_ORGANIZATION_ID;
     
-    const base_Url = `/api/products?organization_id=5218a98727a849f28eed4ad0a3d7882f&reverse_sort=false&page=${count}&size=12&Appid=${apiId}&Apikey=${apiKey}`
-    const url = `/api/products/87f0518bd7744bc2bd368be652d57aba?organization_id=5218a98727a849f28eed4ad0a3d7882f&Appid=${apiId}&Apikey=${apiKey}`
+    const base_Url = `https://timbu-get-all-products.reavdev.workers.dev/?organization_id=${orgId}&reverse_sort=false&page=${count}&size=12&Appid=${apiId}&Apikey=${apiKey}`
     useEffect(()=>{
         const controller = new AbortController()
         const fetchProducts = async()=>{

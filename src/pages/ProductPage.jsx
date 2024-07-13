@@ -23,17 +23,18 @@ const [product, setProduct] = useState(null)
 const [error, setError] = useState(null)
 const apiKey = import.meta.env.VITE_API_KEY;
 const apiId = import.meta.env.VITE_API_ID;
+const orgId = import.meta.env.VITE_ORGANIZATION_ID;
+
 
 window.scrollTo({ top: 0, behavior: 'smooth' })
 
-const url = `/api/products/${productID}?organization_id=5218a98727a849f28eed4ad0a3d7882f&Appid=${apiId}&Apikey=${apiKey}`
+const url = `https://timbu-get-single-product.reavdev.workers.dev/${productID}?organization_id=${orgId}&Appid=${apiId}&Apikey=${apiKey}`
 useEffect(()=>{
     const controller = new AbortController()
     const fetchProducts = async()=>{
         try{
             const response = await fetch(url);
             if(!response.ok){
-                // ?limit=4
                 throw new Error('server error')
             }
             const data = await response.json();
@@ -64,9 +65,6 @@ useEffect(()=>{
     }
     let exists = cartItems.some(item => item.id === product.id && item.name === product.name);
     if(!exists){
-    //   console.log({newProduct})
-    //   console.log({productID})
-    //   console.log({product})
       setCartItems([...cartItems,newProduct]);
     //   console.log({cartItems})
       addToCart();
@@ -111,9 +109,9 @@ useEffect(()=>{
                     </div>
                 </div>
                 <div className="flex gap-2 my-6">
-                        <p className='font-bold'>N{product?.price}</p>
+                        <p className='font-bold'>N{product?.current_price}</p>
                         <p style={{color:'#83758B'}}>N30,000</p>
-                        <p>15%</p>
+                        <p>{product?.available_quantity}%</p>
                 </div>
                 <button onClick={addProductToCart} className='py-2 px-3 bg-[#9C0001] mb-6 w-full rounded lg:w-96 text-[#FFE8F1]'>Buy Now</button>
                 <div className='flex items-center gap-3' style={{color:'#83758B'}}>
