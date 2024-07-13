@@ -1,4 +1,4 @@
-import React, { useContext } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import hero2 from '../assets/hero2.svg';
 import hero3 from '../assets/hero3.svg';
 import avatar from '../assets/avatar.svg';
@@ -15,39 +15,76 @@ import { stateContext } from '../App';
 
 
 const ProductPage = () => {
-  const {products,cartItems, setCartItems,addToCart,setMessage} = useContext(stateContext)
-  const navigate = useNavigate()
-  const {productID} = useParams()
-  const product = products?.find(product => product.unique_id === productID);
-//   product
-//   console.log(products)
+const {cartItems, setCartItems,addToCart} = useContext(stateContext);
+const navigate = useNavigate()
+const {productID} = useParams()
+const [loading, setLoading] = useState(true);
+const [product, setProduct] = useState(null)
+const [error, setError] = useState(null)
+const apiKey = import.meta.env.VITE_API_KEY;
+const apiId = import.meta.env.VITE_API_ID;
+
+window.scrollTo({ top: 0, behavior: 'smooth' })
+
+const url = `/api/products/${productID}?organization_id=5218a98727a849f28eed4ad0a3d7882f&Appid=${apiId}&Apikey=${apiKey}`
+useEffect(()=>{
+    const controller = new AbortController()
+    const fetchProducts = async()=>{
+        try{
+            const response = await fetch(url);
+            if(!response.ok){
+                // ?limit=4
+                throw new Error('server error')
+            }
+            const data = await response.json();
+            setProduct(data)
+            console.log(data)
+            
+        }
+        catch(error){
+            setError(error)
+        }
+        finally{
+            setLoading(false)
+        }
+        
+    }
+    fetchProducts()
+
+    return ()=>{
+        controller.abort()
+    }
+},[productID])
+
+
 
   const addProductToCart = ()=>{
     const newProduct = {
-      ...product,qty:1
+      ...product,qty:1,
     }
-    let exists = cartItems.some(item => item.unique_id === product.unique_id && item.name === product.name);
+    let exists = cartItems.some(item => item.id === product.id && item.name === product.name);
     if(!exists){
-
+    //   console.log({newProduct})
+    //   console.log({productID})
+    //   console.log({product})
       setCartItems([...cartItems,newProduct]);
-    //   console.log(newProduct)
+    //   console.log({cartItems})
       addToCart();
-    //   navigate('/checkout')
+      navigate('/checkout')
     }
-
   }
-//   console.log({productID})
+
   return (
     <div className='lg:px-28 lg:py-8 px-6 py-0 box-border max-w-[1440px] md:mx-auto'>
         <div className="flex lg:flex-nowrap flex-wrap lg:gap-2 lg:h-[372px] w-full">
-            <img src={`https://api.timbu.cloud/images/${product.photos[0].url}`} alt="" className='w-[90%] m-auto h-[327px] lg:h-full object-top object-contain'/>
-            <img src={`https://api.timbu.cloud/images/${product.photos[0].url}`} alt="" className='w-[166px] m-auto lg:h-full object-contain h-[200px]' />
-            <img src={`https://api.timbu.cloud/images/${product.photos[0].url}`} alt="" className='lg:w-[166px] lg:h-full m-auto object-contain h-[200px]' />
+            <img src={`https://api.timbu.cloud/images/${product?.photos[0].url}`} alt="" className='w-[90%] m-auto h-[327px] lg:h-full object-top object-contain'/>
+            <img src={`https://api.timbu.cloud/images/${product?.photos[0].url}`} alt="" className='w-[166px] m-auto lg:h-full object-contain h-[200px]' />
+            <img src={`https://api.timbu.cloud/images/${product?.photos[0].url}`} alt="" className='lg:w-[166px] lg:h-full m-auto object-contain h-[200px]' />
         </div>
 
         <div className='my-6 flex flex-col gap-[28px] lg:flex-row text-[#190028]'>
             <div className='flex flex-col gap-2 lg:w-1/2 w-full'>
-                <h1 className='lg:text-4xl lg:w-400 w-[208px]  text-[18px] font-normal lg:font-semibold ' style={{color:'#9C0001'}}>{product.name}</h1>
+                <h1 className='lg:text-4xl lg:w-400 w-[208px]  text-[18px] font-normal lg:font-semibold ' style={{color:'#9C0001'}}>{product?.name}</h1>
                 <div className='lg:flex items-center hidden gap-2 w-400'>
                     <img src={avatar} alt="" className='rounded-full w-9 h-9'/>
                     <div className="flex flex-col">
@@ -74,7 +111,7 @@ const ProductPage = () => {
                     </div>
                 </div>
                 <div className="flex gap-2 my-6">
-                        <p className='font-bold'>N{product.price}</p>
+                        <p className='font-bold'>N{product?.price}</p>
                         <p style={{color:'#83758B'}}>N30,000</p>
                         <p>15%</p>
                 </div>
@@ -120,11 +157,11 @@ const ProductPage = () => {
                         
                     </div>
                 </div>
-                <p className='text-[#190028]'>{product.description}</p>
+                <p className='text-[#190028]'>{product?.description}</p>
                 <hr className='' style={{border:'1px solid #C6BFC9'}}/>
 
                 <div className='text-[#190028]'>
-                    <p>{product.description}</p>
+                    <p>{product?.description}</p>
 
                     <p className='font-bold mt-4'>Why You Should Buy:</p>
                     <ul style={{listStyleType:'circle'}}>

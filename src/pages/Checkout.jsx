@@ -9,10 +9,11 @@ import { PiTrashSimpleLight } from 'react-icons/pi';
 const Checkout = () => {
   const {cartItems,setCartItems,setCartCount} = useContext(stateContext);
   const {isOverlayVisible,setOverlayVisible} =useContext(stateContext)
+  window.scrollTo({ top: 0, behavior: 'smooth' })
 
   // console.log(cartItems)
 
-  const balance = cartItems?.reduce((total,item)=>Number(item?.current_price[0].NGN[0])+ total,0) || 0
+  const balance = cartItems?.reduce((total,item)=>Number(item?.current_price)+ total,0)
   
   const removeFromCart = (id)=>{
     setCartCount(cartCount=>cartCount-1)
@@ -28,7 +29,7 @@ const increaseQty = (id) =>{
   cartItems.map(item=>{
       if(item.id === id){
           item.qty+=1;
-          item.current_price[0].NGN[0] *= item.qty;
+          item.current_price *= item.qty;
           setCartItems([...cartItems])
           console.log(cartItems)
       }
@@ -38,7 +39,7 @@ const decreaseQty = (id) =>{
   cartItems.map(item=>{
       if(item.id === id){
           if(item.qty !=1){
-              item.current_price[0].NGN[0] /= item.qty;
+              item.current_price /= item.qty;
               item.qty-=1;
               setCartItems([...cartItems])
           }
@@ -59,7 +60,7 @@ const decreaseQty = (id) =>{
           <div className='flex flex-col gap-3  flex-wrap w-full'>
             {cartItems?.map(item=>(
               <div className='flex gap-4 items-center border-b-1 py-3' key={item.unique_id}>
-              <img src={`https://api.timbu.cloud/images/${item.photos[0].url}`} className='h-full w-[100px] lg:w-44 lg:h-52 object-cover object-center' alt="" />
+              <img src={`https://api.timbu.cloud/images/${item?.photos[0].url}`} className='h-full w-[100px] lg:w-44 lg:h-52 object-cover object-center' alt="" />
               <div className='flex lg:items-center justify-between flex-col flex-grow md:flex-row gap-4'>
                 <div className=''>
                   <p className='font-bold text-sm mb-1'>{item.name}</p>
@@ -83,7 +84,7 @@ const decreaseQty = (id) =>{
                       <button className='py-2 px-3 text-sm' style={{border:'1px solid #C6BFC9'}} onClick={()=>increaseQty(item.id)}>+</button>
                     </div>
                     <div>
-                      <p className='font-bold '>N{item.current_price[0].NGN[0].toFixed(2)}</p>
+                      <p className='font-bold '>N{item.current_price}</p>
                       <button className='self-end text-sm cursor-pointer' onClick={()=>removeFromCart(item.id)}>Remove</button>
                     </div>
                   </div>
