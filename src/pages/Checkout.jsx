@@ -94,7 +94,7 @@ const decreaseQty = (id) =>{
             </div>
             ))}
 
-            {cartItems.length > 0 && <button onClick={clearCart} className='self-end text-[#972222] flex items-center gap-1 py-2 px-4 border rounded-lg border-[#972222]'><PiTrashSimpleLight/> <p>Clear Cart</p></button>}
+            {cartItems.length > 0 && <button onClick={clearCart} className='self-end text-[#972222] flex items-center text-[12px] gap-1 py-2 px-4 border rounded-lg border-[#972222]'><PiTrashSimpleLight/> <p>Clear Cart</p></button>}
             
           </div>
           
