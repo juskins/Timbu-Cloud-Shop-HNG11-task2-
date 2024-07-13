@@ -28,7 +28,7 @@ const orgId = import.meta.env.VITE_ORGANIZATION_ID;
 
 window.scrollTo({ top: 0, behavior: 'smooth' })
 
-const url = `https://timbu-get-single-product.reavdev.workers.dev/${productID}?organization_id=${orgId}&Appid=${apiId}&Apikey=${apiKey}`    
+const url = `https://timbu-get-single-product.reavdev.workers.dev/${productID}?organization_id=${orgId}&Appid=${apiId}&Apikey=${apiKey}`        
 // const url = `/api/products/${productID}?organization_id=${orgId}&Appid=${apiId}&Apikey=${apiKey}`
 useEffect(()=>{
     const controller = new AbortController()
@@ -40,7 +40,7 @@ useEffect(()=>{
             }
             const data = await response.json();
             setProduct(data)
-            // console.log(data)
+            console.log(data)
             
         }
         catch(error){
@@ -64,7 +64,7 @@ useEffect(()=>{
     const newProduct = {
       ...product,qty:1,
     }
-    let exists = cartItems.some(item => item.id === product.id && item.name === product.name);
+    let exists = cartItems?.some(item => item.id === product.id && item.name === product.name);
     if(!exists){
       setCartItems([...cartItems,newProduct]);
     //   console.log({cartItems})
