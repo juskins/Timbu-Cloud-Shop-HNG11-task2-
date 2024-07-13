@@ -50,7 +50,7 @@ const ProductList = () => {
         {/* <!-- Current: "z-10 bg-indigo-600 text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600", Default: "text-gray-900 ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus:outline-offset-0" --> */}
         <button onClick={()=>{setPage(1);setFocusedButton(1);}} aria-current="page" className="relative z-10 inline-flex items-center border-gray-300 border  px-4 py-2 text-sm font-semibold text-gray-900 focus:z-20 focus-visible:outline" style={{backgroundColor:focusedButton === 1 ? '#972222' : ''}}>1</button>
         <button onClick={()=>{setPage(2);setFocusedButton(2);}} className="relative inline-flex items-center px-4 py-2 text-sm font-semibold text-gray-900 border-gray-300 border " style={{backgroundColor:focusedButton === 2 ? '#972222' : ''}}>2</button>
-        <button onClick={()=>{setPage(3);setFocusedButton(3);}} className="relative hidden items-center px-4 py-2 text-sm font-semibold text-gray-900 border-gray-300 border md:inline-flex" style={{backgroundColor:focusedButton === 3 ? '#972222' : ''}}>3</button>
+        <button onClick={()=>{setPage(3);setFocusedButton(3);}} className="relative items-center px-4 py-2 text-sm font-semibold text-gray-900 border-gray-300 border md:inline-flex" style={{backgroundColor:focusedButton === 3 ? '#972222' : ''}}>3</button>
         <button onClick={()=>page !==3 && setPage(page+1)} className="relative inline-flex items-center rounded-r-md px-2 py-2 text-gray-400 border-gray-300 border hover:bg-gray-50 ">
           <span className="sr-only">Next</span>
           <svg className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
