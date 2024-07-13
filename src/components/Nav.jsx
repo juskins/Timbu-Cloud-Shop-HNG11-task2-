@@ -18,7 +18,8 @@ const Nav = () => {
         onChange={handleSearchChange}
         type="search" style={{border:'1px solid #C6BFC9'}} className='w-full rounded-lg mb-2 lg:block hidden lg:mb-0 px-4 py-2 order-3 lg:order-none' placeholder='Search all Products'/>
         <div className='relative w-full mb-2 order-3 lg:hidden block'>
-            <input type="text" className='w-full rounded py-2 px-3 ' style={{border:'1px solid #E1DEE3'}}/>
+            <input type="search" value={searchTerm}
+            onChange={handleSearchChange} className='w-full rounded py-2 px-3 ' style={{border:'1px solid #E1DEE3'}}/>
             <button className='absolute py-2 px-4 w-[26.08px] flex flex-col justify-center items-center right-0 text-[#EDEBEE] top-1/2 -translate-y-1/2  mr-[10px]' style={{backgroundColor:"#9C0001"}}><MdOutlineArrowRightAlt/></button>
         </div>
         <div className='flex items-center min-w-[156px]  gap-x-3 text-2xl text-[#190028]'>
