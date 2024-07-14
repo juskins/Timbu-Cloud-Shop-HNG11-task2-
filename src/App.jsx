@@ -18,6 +18,7 @@ function App() {
   const [page, setPage] = useState(1);
   const [searchTerm, setSearchTerm] = useState('');
 
+
   const handleSearchChange = (event) => {
     setSearchTerm(event.target.value);
   };
@@ -29,7 +30,7 @@ function App() {
 
 
   const handleOverlayClick = () => {
-    setOverlayVisible(false);
+    setOverlayVisible(!isOverlayVisible);
   };
 
   return (
@@ -42,6 +43,7 @@ function App() {
       cartCount,setCartCount,
       page, setPage,
       searchTerm, setSearchTerm,handleSearchChange,
+
     }}>
       <Nav />
       <Outlet />

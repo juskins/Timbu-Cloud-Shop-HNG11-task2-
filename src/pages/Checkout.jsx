@@ -7,8 +7,7 @@ import { PiTrashSimpleLight } from 'react-icons/pi';
 
 
 const Checkout = () => {
-  const {cartItems,setCartItems,setCartCount} = useContext(stateContext);
-  const {isOverlayVisible,setOverlayVisible} =useContext(stateContext)
+  const {cartItems,setCartItems,setCartCount,handleOverlayClick,isOverlayVisible,setOverlayVisible} = useContext(stateContext);
   window.scrollTo({ top: 0, behavior: 'smooth' })
 
   // console.log(cartItems)
@@ -57,46 +56,50 @@ const decreaseQty = (id) =>{
       <div className='flex flex-col gap-6 py-6'>
         <p className='text-2xl font-medium'>Shopping Cart</p>
         <div className = 'flex lg:flex-row gap-12 flex-col'>
-          <div className='flex flex-col gap-3  flex-wrap w-full'>
-            {cartItems?.map(item=>(
-              <div className='flex gap-4 items-center border-b-1 py-3' key={item.unique_id}>
-              <img src={`https://api.timbu.cloud/images/${item?.photos[0].url}`} className='h-full w-[100px] lg:w-44 lg:h-52 object-cover object-center' alt="" />
-              <div className='flex lg:items-center justify-between flex-col flex-grow md:flex-row gap-4'>
-                <div className=''>
-                  <p className='font-bold text-sm mb-1'>{item.name}</p>
-                  <div>
-                    <div className='flex items-center gap-2'>
-                          <p className='text-sm'>Sizes</p>
-                          <button className='bg-gray-100 focus:bg-blue-500 focus:text-white py-1 px-2'style={{fontSize:'7px'}}>XS</button>
-                          <button className='bg-gray-100 focus:bg-blue-500 focus:text-white py-1 px-2'style={{fontSize:'7px'}}>S</button>
-                          <button className='bg-gray-100 focus:bg-blue-500 focus:text-white py-1 px-2'style={{fontSize:'7px'}}>M</button>
-                          <button className='bg-gray-100 focus:bg-blue-500 focus:text-white py-1 px-2'style={{fontSize:'7px'}}>L</button>
-                          <button className='bg-gray-100 focus:bg-blue-500 focus:text-white py-1 px-2'style={{fontSize:'7px'}}>XL</button>
-                      </div>
-                  </div>
-                </div>
-
-                <div className='flex flex-col w-full'>
-                  <div className='flex items-center flex-grow justify-between  lg:justify-end  gap-9'>
-                    <div className='flex gap-4 items-center'>
-                      <button className='py-2 px-3 text-sm' style={{border:'1px solid #C6BFC9'}} onClick={()=>decreaseQty(item.id)}>-</button>
-                      <span>{item.qty}</span>
-                      <button className='py-2 px-3 text-sm' style={{border:'1px solid #C6BFC9'}} onClick={()=>increaseQty(item.id)}>+</button>
+          
+          {cartItems.length === 0 ? 
+          <div className='w-full flex justify-center items-center text-gray-400'>No item in Cart</div>
+          :
+          <div className='flex flex-col gap-3 flex-wrap w-full'>
+          {cartItems?.map(item=>(
+            <div className='flex gap-4 items-center border-b-1 py-3' key={item.unique_id}>
+            <img src={`https://api.timbu.cloud/images/${item?.photos[0].url}`} className='h-full w-[100px] lg:w-44 lg:h-52 object-cover object-center' alt="" />
+            <div className='flex lg:items-center justify-between flex-col flex-grow md:flex-row gap-4'>
+              <div className=''>
+                <p className='font-bold text-sm mb-1'>{item.name}</p>
+                <div>
+                  <div className='flex items-center gap-2'>
+                        <p className='text-sm'>Sizes</p>
+                        <button className='bg-gray-100 focus:bg-blue-500 focus:text-white py-1 px-2'style={{fontSize:'7px'}}>XS</button>
+                        <button className='bg-gray-100 focus:bg-blue-500 focus:text-white py-1 px-2'style={{fontSize:'7px'}}>S</button>
+                        <button className='bg-gray-100 focus:bg-blue-500 focus:text-white py-1 px-2'style={{fontSize:'7px'}}>M</button>
+                        <button className='bg-gray-100 focus:bg-blue-500 focus:text-white py-1 px-2'style={{fontSize:'7px'}}>L</button>
+                        <button className='bg-gray-100 focus:bg-blue-500 focus:text-white py-1 px-2'style={{fontSize:'7px'}}>XL</button>
                     </div>
-                    <div>
-                      <p className='font-bold '>N{item.current_price}</p>
-                      <button className='self-end text-sm cursor-pointer' onClick={()=>removeFromCart(item.id)}>Remove</button>
-                    </div>
-                  </div>
-                  
                 </div>
               </div>
-            </div>
-            ))}
 
-            {cartItems.length > 0 && <button onClick={clearCart} className='self-end text-[#972222] flex items-center text-[12px] gap-1 py-2 px-4 border rounded-lg border-[#972222]'><PiTrashSimpleLight/> <p>Clear Cart</p></button>}
-            
+              <div className='flex flex-col w-full'>
+                <div className='flex items-center flex-grow justify-between  lg:justify-end  gap-9'>
+                  <div className='flex gap-4 items-center'>
+                    <button className='py-2 px-3 text-sm' style={{border:'1px solid #C6BFC9'}} onClick={()=>decreaseQty(item.id)}>-</button>
+                    <span>{item.qty}</span>
+                    <button className='py-2 px-3 text-sm' style={{border:'1px solid #C6BFC9'}} onClick={()=>increaseQty(item.id)}>+</button>
+                  </div>
+                  <div>
+                    <p className='font-bold '>N{item.current_price}</p>
+                    <button className='self-end text-sm cursor-pointer' onClick={()=>removeFromCart(item.id)}>Remove</button>
+                  </div>
+                </div>
+                
+              </div>
+            </div>
           </div>
+          ))}
+
+          {cartItems.length > 0 && <button onClick={clearCart} className='self-end text-[#972222] flex items-center text-[12px] gap-1 py-2 px-4 border rounded-lg border-[#972222]'><PiTrashSimpleLight/> <p>Clear Cart</p></button>}
+          
+        </div> }
           
 
           <div className='p-4 flex flex-col gap-3 h-full' style={{backgroundColor:'#F6F5F6'}}>
@@ -121,14 +124,14 @@ const decreaseQty = (id) =>{
                 <h2 className='font-bold'>N{cartItems.length === 0 ? 0 : (Number(`${balance}`) + 33000).toLocaleString()} </h2>
               </div>
             </div>
-            <button style={{backgroundColor:'#9C0001',color:'#FFE8F1'}} className='py-2 rounded px-3 w-full' onClick={()=>setOverlayVisible(true)}>Buy Now</button>
+            <button style={{backgroundColor:'#9C0001',color:'#FFE8F1', cursor:cartItems.length === 0 && 'not-allowed'}} className='py-2 rounded px-3 w-full' onClick={()=>cartItems.length !== 0 && handleOverlayClick()}>Buy Now</button>
           </div>
 
         </div>
       </div>
       <Recommendations/>
     </div>
-    {isOverlayVisible && <Payment/>}
+    {isOverlayVisible  && <Payment/>}
     </div>
   )
 }
