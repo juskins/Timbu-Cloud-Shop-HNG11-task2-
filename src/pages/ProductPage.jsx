@@ -77,8 +77,8 @@ useEffect(()=>{
     <div className='lg:px-28 lg:py-8 px-6 py-0 box-border max-w-[1440px] md:mx-auto'>
         <div className="flex lg:flex-nowrap flex-wrap lg:gap-2 lg:h-[372px] w-full">
             <img src={`https://api.timbu.cloud/images/${product?.photos[0].url}`} alt="" className='w-[90%] m-auto h-[327px] lg:h-full object-top object-contain'/>
-            <img src={`https://api.timbu.cloud/images/${product?.photos[0].url}`} alt="" className='w-[166px] m-auto lg:h-full object-contain h-[200px]' />
-            <img src={`https://api.timbu.cloud/images/${product?.photos[0].url}`} alt="" className='lg:w-[166px] lg:h-full m-auto object-contain h-[200px]' />
+            <img src={`https://api.timbu.cloud/images/${product?.photos[1].url}`} alt="" className='w-[166px] m-auto lg:h-full object-contain h-[200px]' />
+            <img src={`https://api.timbu.cloud/images/${product?.photos[2].url}`} alt="" className='lg:w-[166px] lg:h-full m-auto object-contain h-[200px]' />
         </div>
 
         <div className='my-6 flex flex-col gap-[28px] lg:flex-row text-[#190028]'>
